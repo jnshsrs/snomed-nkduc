@@ -2,7 +2,9 @@
 title: "SNOMED Mapping"
 author: "Jens Hüsers"
 date: "5/25/2020"
-output: html_document
+output:
+  md_document:
+    variant: markdown_github
 editor_options: 
   chunk_output_type: console
 ---
@@ -372,14 +374,9 @@ cross_map <- concepts %>%
 
 # googlesheets4::write_sheet(data = cross_map, ss = sheet, sheet = "cross-map")
 
-write_csv(x = cross_map, path = "./data/cross-map.csv")
-write_csv(x = concepts, path = "./data/mapping-results.csv")
-write_csv(x = ref_table, path = "./data/reference-table-nkduc.csv")
+# write_csv(x = cross_map, path = "./data/cross-map.csv")
+# write_csv(x = concepts, path = "./data/mapping-results.csv")
+# write_csv(x = ref_table, path = "./data/reference-table-nkduc.csv")
 
-```
-
-
-```{r}
-concepts$finales_konzept
 ```
 
