@@ -10,4 +10,6 @@ The cross-map is available as a csv-file, which can be joined with the reference
 
 ## Coverage Rate and Reliability Analysis
 
-The coverage rate and reliability analysis is available in a python notebook which is available [here](https://github.com/contact).
+The coverage rate and reliability analysis is available in a python notebook which is available [here](https://jnshsrs.github.io/snomed-nkduc//snomed.html).
+
+**Note:** Additionally, we provide the same analysis as in R which can be found [here]().
