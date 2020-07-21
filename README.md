@@ -8,6 +8,9 @@ On this site, we provide the cross-map, which is the pairwise link between the s
 
 The cross-map is available as a csv-file, which can be joined with the reference table of the source dataset (NKDUC) that is also available as csv file.
 
+- [NKDUC Reference](https://github.com/jnshsrs/snomed-nkduc/blob/master/data/mapping-results.csv)
+- [Cross-Map](https://github.com/jnshsrs/snomed-nkduc/blob/master/data/mapping-results.csv)
+
 ## Coverage Rate and Reliability Analysis
 
 The coverage rate and reliability analysis is available in a python notebook which is available [here](https://jnshsrs.github.io/snomed-nkduc/snomed.html).
