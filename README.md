@@ -1,37 +1,13 @@
-## Welcome to GitHub Pages
+## SNOMED CT Mapping of the NKDUC
 
-You can use the [editor on GitHub](https://github.com/jnshsrs/snomed-nkduc/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This site is contains additional information about our mapping project, in which we linked clinical concepts of a natioanlly consented dataset for the record keeping of patients with leg ulcer (NKDUC) with the international terminology SNOMED CT.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+On this site, we provide the cross-map, which is the pairwise link between the source concepts of the national dataset and SNOMED CT concepts, and the complete analysis of the reliability and the coverage rate of the mapping.
 
-### Markdown
+## Cross-Map
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The cross-map is available as a csv-file, which can be joined with the reference table of the source dataset (NKDUC) that is also available as csv file.
 
-```markdown
-Syntax highlighted code block
+## Coverage Rate and Reliability Analysis
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jnshsrs/snomed-nkduc/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The coverage rate and reliability analysis is available in a python notebook which is available [here](https://github.com/contact).
