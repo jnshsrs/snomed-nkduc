@@ -1,0 +1,385 @@
+---
+title: "SNOMED Mapping"
+author: "Jens Hüsers"
+date: "5/25/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse) # for data manipulation
+library(googlesheets4) # Read raw data stored in a google sheet document
+library(vcd) # Calculation reliability statistics, e.g. Kappa
+library(gt) # This packages supports the creation of tables
+
+sheet <- "1-Iyg6n1gbFOH7FiRYUybo7Vw1lyW2_Hesf1WKf_hazg" # sheet identifier (google sheets)
+
+
+# Data preprocessing
+# Among other tasks: relabels factors
+concepts <- googlesheets4::read_sheet(ss = sheet, sheet = "finalisieren", col_types = "c") %>% 
+  mutate(kapitel = stringr::str_extract(string = chapter, pattern = "^\\d{2}")) %>% 
+  mutate_at("kapitelbezeichnung", stringr::str_to_title) %>% 
+  mutate(kapitelnummer = str_extract(string = chapter, pattern = "^\\d\\d")) %>% 
+  mutate(kapitelbezeichnung = glue::glue("{kapitelnummer} {kapitelbezeichnung}")) %>% 
+  select(-kapitelnummer) %>% 
+  mutate_at(c("equ_jens", "equ_mareike", "equi_final"), 
+            .f = ~ factor(x = .x, 
+                          levels = 1:5, 
+                          labels = c("Equivalence of meaning; lexical, as well as conceptual",
+                                     "Equivalence of meaning, but with synonymy.",
+                                     "Source concept is broader and has a less specific meaning than the target concept",
+                                     "Source concept is narrower and has a more specific meaning than the target concept",
+                                     "No map is possible"),
+                          ordered = TRUE))
+
+1 # This one is necessary to correctly load the sheet from google drive/ sheets
+
+ref_table <- googlesheets4::read_sheet(ss = sheet, sheet = "referenz-tabelle") %>% 
+  mutate(kapitel = stringr::str_extract(string = chapter, pattern = "^\\d{2}"))
+
+```
+
+Wie viele Konzepte werden verknüpft?
+
+```{r}
+
+ref_table %>%
+  filter(mapping == "1") %>%
+  group_by(kapitelbezeichnung, kapitel) %>% 
+  count() %>% 
+  arrange(kapitel)
+  
+```
+
+# Reliabilität Mapping
+
+```{r mapping}
+
+# Restructure/ Pivot Data
+
+mapping <- concepts %>% 
+  select(id, id_mapper, kapitel, kapitelbezeichnung, bezeichnung, snomed_code, kapitel) %>% 
+  pivot_wider(id_cols = c("id", "kapitelbezeichnung", "bezeichnung", "kapitel"),
+              names_from = "id_mapper",
+              values_from = "snomed_code")
+
+# Caluclate Kappa values
+
+# Kappa Overall
+kappa_overall <- irr::kappam.fleiss(mapping[, c("9f6", "83f", "605")])
+
+# Kappa by Chapter
+by_chapter <- mapping %>% 
+  select(-id, -bezeichnung) %>% 
+  mutate_at("kapitelbezeichnung", stringr::str_to_title) %>% 
+  nest(data = c(`9f6`, `83f`, `605`)) %>% 
+  mutate(kappa = map(data, ~ irr::kappam.fleiss(ratings = .x))) %>% 
+  mutate(kappa_val = map_dbl(kappa, pluck, "value")) %>% 
+  mutate(kappa_subjects = map_dbl(kappa, pluck, "subjects")) %>% 
+  mutate(group = "By Chapter")
+
+overall <- tibble(group = "Overall",
+       kappa_val = kappa_overall$value,
+       kappa_subjects = kappa_overall$subjects) 
+
+# Calculate Agreement
+rater <- mapping %>% 
+  set_names(c("id", "kapitelbezeichnung", "bezeichnung", "kapitel", "phil", "lisa", "anne")) 
+  
+agreement <- rater %>% 
+  mutate(phil_anne = phil == anne) %>% 
+  mutate(anne_lisa = anne == lisa) %>% 
+  mutate(phil_lisa = phil == lisa) %>% 
+  mutate(agreement = (phil_anne + anne_lisa + phil_lisa) / 3) 
+
+overall <- agreement %>% 
+  summarise(agreement = mean(agreement)) %>% 
+  bind_cols(overall)
+
+by_chapter <- agreement %>% 
+  mutate_at("kapitelbezeichnung", stringr::str_to_title) %>% 
+  group_by(kapitelbezeichnung) %>% 
+  summarise(agreement = mean(agreement)) %>% 
+  full_join(by_chapter, by = "kapitelbezeichnung") %>% 
+  select(kapitelbezeichnung, data, kappa, agreement, everything())
+
+mapping_results <- by_chapter %>% 
+  select(-data, -kappa) %>% 
+  bind_rows(overall)
+  
+mapping_results %>% 
+  mutate_at("kapitelbezeichnung", stringr::str_to_title) %>% 
+  set_names(c("Chapter", "Percent", "Chapter_Nr", "Fleiss-Kappa", "Number of Items", "Group")) %>% 
+  mutate(Chapter = glue::glue("{Chapter_Nr} - {Chapter}", .na =  NULL)) %>% 
+  select(-Chapter_Nr) %>% 
+  arrange(Chapter) %>% 
+  mutate_at("Chapter", ~ if_else(condition = is.na(.x), true = "", false = as.character(.x))) %>% 
+  gt::gt(rowname_col = "Chapter", groupname_col = "Group") %>%
+  gt::fmt_percent(columns = vars("Percent"), decimals = 2) %>% 
+  gt::fmt(columns = vars("Fleiss-Kappa"), fns = function(x) sprintf(x, fmt = '%#.3f')) %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_text(align = "center") 
+    ),
+    locations = gt::cells_body()  
+  ) %>% 
+  gt::tab_spanner(label = "Agreement", columns = matches("Percent|Fleiss")) %>% 
+  gt::tab_header(
+    title = gt::md("Reliability of the Mapping between three Mappers"),
+  )
+ 
+```
+
+# Reliability of the Equivalence Testing
+
+```{r equivalence_rating}
+
+equ <- concepts %>% 
+  select(id, kapitelbezeichnung, kapitel, equ_jens, equ_mareike) %>%
+  mutate_at("kapitelbezeichnung", stringr::str_to_title) %>% 
+  mutate(Chapter = glue::glue("{kapitel} - {kapitelbezeichnung}", .na =  NULL)) %>% 
+  select(-kapitelbezeichnung, -kapitel)
+
+overall_equ <- irr::kappam.fleiss(equ[, c("equ_jens", "equ_mareike")])
+
+by_chapter_equ <- equ %>% 
+  nest(data = c(id, equ_jens, equ_mareike)) %>% 
+  mutate(kappa = map(data, ~ irr::kappam.fleiss(ratings = .x[, c("equ_jens", "equ_mareike")]))) %>% 
+  mutate(kappa_val = map_dbl(kappa, pluck, "value")) %>% 
+  mutate(kappa_subjects = map_dbl(kappa, pluck, "subjects")) %>% 
+  unnest(data) %>% 
+  mutate(agreement = equ_jens == equ_mareike) %>% 
+  group_by(Chapter) %>% 
+  mutate(agreement = sum(agreement) / length(agreement)) %>% 
+  summarise_at(c("kappa_val", "kappa_subjects", "agreement"), .funs = mean) %>% 
+  mutate(Group = "By Chapter")
+
+overall_equ <- tibble(
+  Chapter = "",
+  agreement = sum(equ$equ_jens == equ$equ_mareike) / nrow(equ),
+  kappa_val = overall_equ$value,
+  kappa_subjects = overall_equ$subjects,
+  Group = "Overall"
+)
+
+by_chapter_equ %>% 
+  mutate_at("Chapter", as.character) %>% 
+  bind_rows(overall_equ) %>% 
+  select(Chapter, Percent = agreement, `Fleiss-Kappa` = kappa_val, `Number of Items` = kappa_subjects, Group) %>% 
+  gt::gt(rowname_col = "Chapter", groupname_col = "Group") %>%
+  gt::fmt_percent(columns = vars("Percent"), decimals = 2) %>% 
+  gt::fmt(columns = vars("Fleiss-Kappa"), fns = function(x) sprintf(x, fmt = '%#.3f')) %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_text(align = "center") 
+    ),
+    locations = gt::cells_body()  
+  ) %>% 
+  gt::tab_spanner(label = "Agreement", columns = matches("Percent|Fleiss")) %>% 
+  gt::tab_header(
+    title = gt::md("Reliability of the Equivalence Rating between two Rater"),
+  )
+
+```
+
+# Coverage
+
+```{r}
+
+coverage_results <- concepts %>% 
+  group_by(id) %>% 
+  filter(finales_konzept == min(finales_konzept)) %>% 
+  distinct(id, .keep_all = TRUE) %>% 
+  group_by(equi_final) %>% 
+  count() %>% 
+  ungroup() %>% 
+  mutate(proportion = n / sum(n)) %>% 
+  mutate(map = c("Map", "Map", "Map", "Map", "No Map")) %>% 
+  group_by(map) %>% 
+  mutate(proportion_map = sum(proportion)) %>% 
+  mutate(n_map = sum(n)) 
+ 
+# Vielviel Prozent der Konzepte können insgesamt abgedeckt werden?
+coverage_results %>% 
+  rename("Number of Items" = n, "Proportion" = proportion) %>% 
+  select(-n_map, -proportion_map) %>% 
+  gt(rowname_col = "equi_final", groupname_col = "map") %>% 
+  fmt_percent(columns = starts_with("proportion"), decimals = 2) %>%
+  tab_spanner(label = "Equivalence Rating", columns = vars("Number of Items", "Proportion")) %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_text(align = "center") 
+    ),
+    locations = gt::cells_body()  
+  )
+
+```
+
+
+```{r}
+
+results_equivalence <- concepts %>% 
+  group_by(id) %>% 
+  filter(finales_konzept == min(finales_konzept)) %>% 
+  distinct(id, .keep_all = TRUE) %>% 
+  group_by(equi_final, kapitelbezeichnung) %>% 
+  count() %>% 
+  group_by(kapitelbezeichnung) %>% 
+  mutate(proportion = n / sum(n)) %>% 
+  arrange(kapitelbezeichnung, equi_final) %>% 
+  ungroup()
+  
+overall_equ_results <- results_equivalence %>% 
+  group_by(equi_final) %>% 
+  select(-proportion) %>% 
+  summarize(n = sum(n)) %>% 
+  ungroup %>% 
+  mutate(proportion = n / sum(n)) %>% 
+  mutate(kapitelbezeichnung = "Overall") %>% 
+  mutate(section = "Overall") %>% 
+  mutate_at("proportion", ~ scales::percent(x = .x, accuracy = 0.1)) %>% 
+  mutate(n_prop = glue::glue("{proportion} (n={n})")) %>% 
+  select(Overall = n_prop)
+  
+
+results_equivalence %>% 
+  mutate_at("proportion", ~ scales::percent(x = .x, accuracy = 0.1)) %>% 
+  mutate(n_prop = glue::glue("{proportion} (n={n})")) %>% 
+  select(-n, -proportion) %>% 
+  pivot_wider(id_cols = equi_final, names_from = kapitelbezeichnung, values_from = n_prop, values_fill = list(n_prop = "-")) %>%
+  mutate_all(~ stringr::str_replace(string = .x, pattern = "\\% \\(", replacement = "%\n(")) %>% 
+  bind_cols(overall_equ_results) %>% 
+  select(equi_final, Overall, dplyr::everything()) %>% 
+  gt::gt(rowname_col = "equi_final") %>% 
+  tab_spanner(label = "Chapter", columns = matches("^\\d\\d")) %>% 
+  gt::tab_stubhead(label = "Equivalence Categories") %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_text(align = "center") 
+    ),
+    locations = gt::cells_body()  
+  )
+
+```
+
+```{r}
+results_equivalence <- results_equivalence %>% 
+  mutate(equi_simple = as.integer(equi_final)) %>% 
+  mutate(equi_simple = case_when(
+    equi_simple == 1 ~ "1",
+    equi_simple == 2 ~ "1",
+    equi_simple == 3 ~ "2",
+    equi_simple == 4 ~ "2",
+    equi_simple == 5 ~ "3"
+  )) %>% 
+  mutate(equi_simple = factor(x = equi_simple,
+                              levels = 1:3, 
+                              labels = c("Semantic Match present (Degree 1 and 2)",
+                                         "Semantic Asymmetry present (Degree 3 and 4)",
+                                         "Semantic Match absent (Degree 5)"),
+                              ordered = TRUE
+                              )) 
+overall_equ_results_simple <- results_equivalence %>% 
+  group_by(equi_simple) %>% 
+  select(-proportion) %>% 
+  summarize(n = sum(n)) %>% 
+  ungroup %>% 
+  mutate(proportion = n / sum(n)) %>% 
+  mutate(kapitelbezeichnung = "Overall") %>% 
+  mutate(section = "Overall") %>% 
+  mutate_at("proportion", ~ scales::percent(x = .x, accuracy = 0.1)) %>% 
+  mutate(n_prop = glue::glue("{proportion} (n={n})")) %>% 
+  select(Overall = n_prop)
+  
+
+results_equivalence %>% 
+  group_by(equi_simple, kapitelbezeichnung) %>% 
+  summarise(n = sum(n), proportion = sum(proportion)) %>% 
+  mutate_at("proportion", ~ scales::percent(x = .x, accuracy = 0.1)) %>% 
+  mutate(n_prop = glue::glue("{proportion} (n={n})")) %>% 
+  select(-n, -proportion) %>% 
+  pivot_wider(id_cols = equi_simple, names_from = kapitelbezeichnung, values_from = n_prop, values_fill = list(n_prop = "-")) %>%
+  ungroup() %>% 
+  mutate_all(~ stringr::str_replace(string = .x, pattern = "\\% \\(", replacement = "%\n(")) %>% 
+  bind_cols(overall_equ_results_simple) %>% 
+  select(equi_simple, Overall, dplyr::everything()) %>% 
+  gt::gt(rowname_col = "equi_simple") %>% 
+  tab_spanner(label = "Chapter", columns = matches("^\\d\\d")) %>% 
+  gt::tab_stubhead(label = "Equivalence Categories") %>% 
+  gt::tab_style(
+    style = list(
+      gt::cell_text(align = "center") 
+    ),
+    locations = gt::cells_body()  
+  )
+
+```
+
+
+```{r}
+
+concepts %>% 
+  group_by(id) %>% 
+  filter(finales_konzept == min(finales_konzept)) %>% 
+  distinct(id, .keep_all = TRUE)
+
+results_equivalence_agg <- results_equivalence %>% 
+  mutate_at(.vars = "equi_final", 
+            .funs =  ~ if_else(
+              condition = .x == "No map is possible",
+              true = "No",
+              false = "Yes"
+            )) 
+
+coverage_overall <- results_equivalence_agg %>% 
+  group_by(equi_final) %>% 
+  summarise(n = sum(n), proportion = sum(proportion)) %>% 
+  mutate(kapitelbezeichnung = "") %>% 
+  mutate(group = "Overall") %>% 
+  mutate(proportion = n / sum(n)) %>% 
+  mutate(proportion = glue::glue("{scales::percent(proportion, accuracy = .01)} (n={n})")) %>% 
+  select(-n) %>% 
+  pivot_wider(id_cols = c("kapitelbezeichnung", "group"), names_from = equi_final, values_from = proportion)
+
+coverage_by_chapter <- results_equivalence_agg %>% 
+  group_by(equi_final, kapitelbezeichnung) %>% 
+  summarise(n = sum(n), proportion = sum(proportion)) %>% 
+  mutate(group = "By Chapter") %>% 
+  arrange(kapitelbezeichnung) %>% 
+  mutate(proportion = glue::glue("{scales::percent(proportion, accuracy = .01)} (n={n})")) %>% 
+  mutate_at(c("kapitelbezeichnung", "proportion"), as.character) %>% 
+  select(-n) %>% 
+  pivot_wider(id_cols = c("kapitelbezeichnung", "group"), names_from = equi_final, values_from = proportion)
+
+coverage_by_chapter %>% 
+  bind_rows(coverage_overall) %>% 
+  gt::gt(rowname_col = "kapitelbezeichnung", groupname_col = "group") %>% 
+  gt::tab_spanner(label = "SNOMED CT identified", columns = c("No", "Yes"))
+
+```
+
+```{r}
+# Finale Map-Table
+cross_map <- concepts %>% 
+  filter(finales_konzept == 1) %>% 
+  select(id, snomed_code, descriptor, equi_final) %>% 
+  distinct()
+
+# googlesheets4::write_sheet(data = cross_map, ss = sheet, sheet = "cross-map")
+
+write_csv(x = cross_map, path = "./data/cross-map.csv")
+write_csv(x = concepts, path = "./data/mapping-results.csv")
+write_csv(x = ref_table, path = "./data/reference-table-nkduc.csv")
+
+```
+
+
+```{r}
+concepts$finales_konzept
+```
+

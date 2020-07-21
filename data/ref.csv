@@ -1,0 +1,404 @@
+id,chapter,kapitelbezeichnung,bezeichnung,mds,sds,finaler_beschluss,einheit_format,information_beschreibung,mehrfachnennung,mapping,coding_type,added,code1,code2,code3,Postkoordination,kommentar
+1,01-01,stammdaten,Geburtsdatum,TRUE,TRUE,ddmmyyyy,ddmmyyyy,Automatisierte Altersberechnung,FALSE,1,key_item,0,184099003,NA,NA,NA,NA
+2,01-02,stammdaten,Geschlecht,TRUE,TRUE,1 „männlich“,NA,NA,FALSE,1,value_item,0,248153007,NA,NA,NA,NA
+3,01-02,stammdaten,Geschlecht,TRUE,TRUE,2 „weiblich“,NA,NA,FALSE,1,value_item,0,248152002,NA,NA,NA,NA
+4,01-02,stammdaten,Geschlecht,TRUE,TRUE,Geschlecht,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+5,01-03,stammdaten,Versichertenstatus,FALSE,TRUE,1 „GKV ohne Zusatzversicherung“,NA,NA,FALSE,1,value_item,0,310115006,NA,NA,NA,Public health service
+6,01-03,stammdaten,Versichertenstatus,FALSE,TRUE,2 „GKV mit staatl. Zusatzversicherung“,NA,NA,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+7,01-03,stammdaten,Versichertenstatus,FALSE,TRUE,3 „PKV“,NA,NA,FALSE,1,value_item,0,314847007,NA,NA,NA,Patient has a private insurance.
+8,01-03,stammdaten,Versichertenstatus,FALSE,TRUE,4 „nicht krankversichert“,NA,NA,FALSE,1,value_item,0,424553001,NA,NA,NA,uninsured medical expenses
+9,01-03,stammdaten,Versichertenstatus,FALSE,TRUE,5 „anders krankenversichert“,NA,NA,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+10,01-03,stammdaten,Versichertenstatus,FALSE,TRUE,Versichertenstatus,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+11,01-03-01,stammdaten,Name der Krankenkasse,FALSE,TRUE,-,Text,NA,FALSE,1,key_item,0,NA,NA,NA,NA,NA
+12,01-04,stammdaten,PLZ,FALSE,TRUE,-,5-stellig,NA,FALSE,1,key_item,0,184102003,NA,NA,NA,patient postal code
+13,01-05,stammdaten,Familienstand,FALSE,TRUE,1 „feste Partnerschaft“,NA,Wichtig zur Klärung sozialen Supports,FALSE,1,value_item,0,38070000,430618002,14012001,x,cohabiting / domestic partnership / common law marriage or common law partnership in Snowmed               eigentlich solid or permanent relationship
+14,01-05,stammdaten,Familienstand,FALSE,TRUE,2 „verheiratet“,NA,Wichtig zur Klärung sozialen Supports,FALSE,1,value_item,0,87915002,NA,NA,NA,NA
+15,01-05,stammdaten,Familienstand,FALSE,TRUE,3 „geschieden“,NA,Wichtig zur Klärung sozialen Supports,FALSE,1,value_item,0,20295000,NA,NA,NA,NA
+16,01-05,stammdaten,Familienstand,FALSE,TRUE,4 „verwitwet“,NA,Wichtig zur Klärung sozialen Supports,FALSE,1,value_item,0,33553000,NA,NA,NA,NA
+17,01-05,stammdaten,Familienstand,FALSE,TRUE,5 „ledig“,NA,Wichtig zur Klärung sozialen Supports,FALSE,1,value_item,0,125725006,NA,NA,NA,never married / single
+18,01-05,stammdaten,Familienstand,FALSE,TRUE,Familienstand,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+19,01-06,stammdaten,Schulbildung,FALSE,TRUE,1 „ohne Abschluss“,NA,Wichtig im Zusammenhang mit Patientenauf- klärung,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+20,01-06,stammdaten,Schulbildung,FALSE,TRUE,2 „Hauptschulabschluss“,NA,Wichtig im Zusammenhang mit Patientenauf- klärung,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+21,01-06,stammdaten,Schulbildung,FALSE,TRUE,3 „Realschulabschluss (Mittlere Reife)“,NA,Wichtig im Zusammenhang mit Patientenauf- klärung,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+22,01-06,stammdaten,Schulbildung,FALSE,TRUE,4 „Fachhochschulreife“,NA,Wichtig im Zusammenhang mit Patientenauf- klärung,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+23,01-06,stammdaten,Schulbildung,FALSE,TRUE,5 „Allgemeine Hochschulreife (Abitur)“,NA,Wichtig im Zusammenhang mit Patientenauf- klärung,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+24,01-06,stammdaten,Schulbildung,FALSE,TRUE,6 „anderer Schulabschluss“,NA,Wichtig im Zusammenhang mit Patientenauf- klärung,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+25,01-06,stammdaten,Schulbildung,FALSE,TRUE,Schulbildung,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+26,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,1 „erwerbstätigmit |__|__| Stunden pro Woche“,NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+27,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,"2 „längere Beurlaubung, Freistellung (z. B. Elternzeit)“",NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,700149001,NA,NA,NA,leave of absence: parental leave
+28,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,"3 „Auszubildende/r (Azubi), freiwillige/r Zivildienstleistende/r oder Wehrdienstleistender,freiwilliges soziales Jahr“",NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+29,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,"4 „in Rente, Pension, Vorruhestand (nicht aufgrund der Erkrankung)“",NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,712889009,NA,NA,NA,retired worker
+30,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,"5 „in Frührente, erwerbsunfähig (wegen der Erkrankung)“",NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,105494007,NA,NA,NA,early retirement
+31,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,6 „Hausfrau/Hausmann“,NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+32,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,"7 „Schüler/in, Student/in“",NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,65853000,NA,NA,NA,student
+33,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,8 „Empfänger von Arbeitslosengeld I oder II“,NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,73438004,NA,NA,NA,unemployed
+34,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,9 „Sonstiges“,NA,Wichtig für die Beurteilung der Funktionsfähig- keit mit Wunde,FALSE,1,value_item,0,74964007,NA,NA,NA,other
+35,01-07,stammdaten,Berufstätigkeit,FALSE,TRUE,Berufstätigkeit,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+36,01-07-01,stammdaten,Sonstige,FALSE,TRUE,-,Text,NA,FALSE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+37,02-01,allgemeinstatus,Größe,FALSE,TRUE,cm,"xxx cm; x,x kg","Body-Mass-Index wird automatisiert berechnet, stellt die wichtigere Größe dar",FALSE,1,key_item,0,50373000,726527001,60621009,x,body height / weight / BMI
+38,02-01,allgemeinstatus,Gewicht,FALSE,TRUE,kg,"xxx cm; x,x kg","Body-Mass-Index wird automatisiert berechnet, stellt die wichtigere Größe dar",FALSE,1,key_item,0,50373000,726527001,60621009,x,body height / weight / BMI
+39,02-02,allgemeinstatus,Ulkusrelevante Begleiterkrankungen,TRUE,TRUE,-,NA,Notwendig als potenzielle Prädiktoren der Heilung,FALSE,0,NA,0,NA,NA,NA,NA,NA
+40,02-02-01,allgemeinstatus,Herz-Kreislauf-Erkrankungen,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,49601007,NA,NA,NA,disorder of  the cardiovascular system
+41,02-02-01-01-01,allgemeinstatus,Arterielle Hypertonie,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+42,02-02-01-01-01,allgemeinstatus,Arterielle Hypertonie,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,38341003,NA,NA,NA,"Hypertensive disorder, systemic arterial"
+43,02-02-01-02-02,allgemeinstatus,Herzinsuffizienz,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,394927007,NA,NA,NA,Heart failure excluded
+44,02-02-01-02-02,allgemeinstatus,Herzinsuffizienz,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,40445007,84114007,NA,NA,Heart valve regurgitation (disorder) / heart failure and cardiac insufficiency
+45,02-02-01-03-03,allgemeinstatus,Koronare Herzkrankheit,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,473146006,NA,NA,NA,Coronary arteriosclerosis excluded (situation)
+46,02-02-01-03-03,allgemeinstatus,Koronare Herzkrankheit,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,53741008,NA,NA,NA,Coronary arteriosclerosis (disorder)
+47,02-02-01-04-04,allgemeinstatus,Gerinnungsstörung,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+48,02-02-01-04-04,allgemeinstatus,Gerinnungsstörung,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,64779008,NA,NA,NA,Blood coagulation disorder
+49,02-02-01-05-05,allgemeinstatus,Zustand nach Thrombose,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+50,02-02-01-05-05,allgemeinstatus,Zustand nach Thrombose,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,439127006,NA,NA,NA,Thrombosis
+51,02-02-02,allgemeinstatus,Pulmonale Erkrankungen,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,19829001,NA,NA,NA,Disorder of lung
+52,02-02-02-01-01,allgemeinstatus,Asthma bronchiale,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+53,02-02-02-01-01,allgemeinstatus,Asthma bronchiale,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,195967001,NA,NA,NA,Asthma
+54,02-02-02-02-02,allgemeinstatus,Chronische Bronchitis,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+55,02-02-02-02-02,allgemeinstatus,Chronische Bronchitis,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,63480004,NA,NA,NA,Chronic bronchitis
+56,02-02-03,allgemeinstatus,Stoffwechselstörungen,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,75934005,NA,NA,NA,Metabolic disease
+57,02-02-03-01-01,allgemeinstatus,Diabetes mellitus,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,315216001,NA,NA,NA,Diabetes mellitus excluded
+58,02-02-03-01-01,allgemeinstatus,Diabetes mellitus,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,73211009,NA,NA,NA,DM
+59,02-02-03-02-02,allgemeinstatus,Diabetes mellitus Typ,TRUE,TRUE,1 „Typ 1“,NA,NA,FALSE,1,value_item,0,46635009,NA,NA,NA,DM I
+60,02-02-03-02-02,allgemeinstatus,Diabetes mellitus Typ,TRUE,TRUE,2 „Typ 2“,NA,NA,FALSE,1,value_item,0,44054006,NA,NA,NA,DM II
+61,02-02-03-02-02,allgemeinstatus,Diabetes mellitus Typ,TRUE,TRUE,3 „Typ 3“,NA,NA,FALSE,1,value_item,0,NA,NA,NA,NA,maturity-onset diabetes
+62,02-02-03-03-03,allgemeinstatus,Diabetes mellitus Erkrankungsdauer,TRUE,TRUE,-,In Jahren,NA,FALSE,1,key_item,0,103335007,NA,NA,NA,duration
+63,02-02-03-04-04,allgemeinstatus,Hyperurikämie,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+64,02-02-03-04-04,allgemeinstatus,Hyperurikämie,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,35885006,NA,NA,NA,Hyperuricemia
+65,02-02-03-05-05,allgemeinstatus,Lipidstoffwechselstörung,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+66,02-02-03-05-05,allgemeinstatus,Lipidstoffwechselstörung,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,267431006,NA,NA,NA,Disorder of lipid metabolism
+67,02-02-03-06-06,allgemeinstatus,Mangelernährung,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+68,02-02-03-06-06,allgemeinstatus,Mangelernährung,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,2492009,NA,NA,NA,Nutrional disorder
+69,02-02-04,allgemeinstatus,Infektionskrankheiten,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+70,02-02-04,allgemeinstatus,Infektionskrankheiten,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,40733004,NA,NA,NA,Infectious disease
+71,02-02-04-01-01,allgemeinstatus,Tuberkulose,FALSE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+72,02-02-04-01-01,allgemeinstatus,Tuberkulose,FALSE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,56717001,NA,NA,NA,Tuberculosis
+73,02-02-04-02-02,allgemeinstatus,Hepatitis,FALSE,TRUE,0 „nein“,NA,NA,TRUE,0,NA,0,NA,NA,NA,NA,NA
+74,02-02-04-02-02,allgemeinstatus,Hepatitis,FALSE,TRUE,1 „ja“,NA,NA,TRUE,1,value_item,0,128241005,NA,NA,NA,Hepatitis
+75,02-02-04-02-02,allgemeinstatus,Hepatitis,FALSE,TRUE,2 „A“,NA,NA,TRUE,1,value_item,0,40468003,NA,NA,NA,Hep. A
+76,02-02-04-02-02,allgemeinstatus,Hepatitis,FALSE,TRUE,3 „B“,NA,NA,TRUE,1,value_item,0,66071002,NA,NA,NA,Hep. B
+77,02-02-04-02-02,allgemeinstatus,Hepatitis,FALSE,TRUE,4 „C“,NA,NA,TRUE,1,value_item,0,50711007,NA,NA,NA,Hep. C
+78,02-02-04-03-03,allgemeinstatus,HIV-Infektion,FALSE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+79,02-02-04-03-03,allgemeinstatus,HIV-Infektion,FALSE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,86406008,NA,NA,NA,HIV infection
+80,02-02-04-04-04,allgemeinstatus,Sonstige,FALSE,TRUE,Infektionskrankheiten,Text,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+81,02-02-05,allgemeinstatus,Lebererkrankungen,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,235856003,NA,NA,NA,liver disorder
+82,02-02-05-01-01,allgemeinstatus,Leberzirrhose,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+83,02-02-05-01-01,allgemeinstatus,Leberzirrhose,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,19943007,NA,NA,NA,Cirrhosis of liver
+84,02-02-05-02-02,allgemeinstatus,Steatosis hepatis,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+85,02-02-05-02-02,allgemeinstatus,Steatosis hepatis,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,197321007,NA,NA,NA,Steatosis of liver
+86,02-02-05-03-03,allgemeinstatus,Chronischer Leberschaden,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+87,02-02-05-03-03,allgemeinstatus,Chronischer Leberschaden,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,243978007,NA,NA,NA,Liver damage
+88,02-02-06,allgemeinstatus,Dermatologisch-allergologische Erkrankung,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,422290000,NA,NA,NA,Allergic disorder of skin
+89,02-02-06-01-01,allgemeinstatus,Kontaktekzem,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+90,02-02-06-01-01,allgemeinstatus,Kontaktekzem,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,40275004,NA,NA,NA,Contact dermatitis
+91,02-02-07,allgemeinstatus,Nierenerkrankungen,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,90708001,NA,NA,NA,Kidney disease
+92,02-02-07-01-01,allgemeinstatus,Niereninsuffizienz,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+93,02-02-07-01-01,allgemeinstatus,Niereninsuffizienz,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,723188008,NA,NA,NA,Renal insufficiency
+94,02-02-08,allgemeinstatus,Rheumatologische und immunologische Erkrankung,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,396332003,NA,NA,NA,Rheumatism ?
+95,02-02-08-01-01,allgemeinstatus,Rheumatoide Arthritis,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+96,02-02-08-01-01,allgemeinstatus,Rheumatoide Arthritis,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,69896004,NA,NA,NA,Rheumatoid arthritis
+97,02-02-08-02-02,allgemeinstatus,Andere rheumatologische Erkrankungen,TRUE,TRUE,-,Text,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+98,02-02-09,allgemeinstatus,Psychische und Suchterkrankungen,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,74732009,NA,NA,NA,Mental illness
+99,02-02-09-01-01,allgemeinstatus,Depression,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+100,02-02-09-01-01,allgemeinstatus,Depression,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,35489007,NA,NA,NA,Depressive disorder
+101,02-02-09-02-02,allgemeinstatus,Raucher,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,8392000,NA,NA,NA,Non-Smoker
+102,02-02-09-02-02,allgemeinstatus,Raucher,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,77176002,NA,NA,NA,Smoker
+103,02-02-09-03-03,allgemeinstatus,Ex-Raucher,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,8392000,NA,NA,NA,Non-Smoker
+104,02-02-09-03-03,allgemeinstatus,Ex-Raucher,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,8517006,NA,NA,NA,Ex-Smoker
+105,02-02-09-04-04,allgemeinstatus,Alkoholabusus,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+106,02-02-09-04-04,allgemeinstatus,Alkoholabusus,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,15167005,7200002,228281002,NA,Alcohol abuse / Alcoholism / Alcoholic or Problem drinker
+107,02-02-09-05-05,allgemeinstatus,Andere Drogen,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+108,02-02-09-05-05,allgemeinstatus,Andere Drogen,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,26416006,NA,NA,NA,Drug abuse
+109,02-02-09-06-06,allgemeinstatus,i. v. Drogenabusus,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+110,02-02-09-06-06,allgemeinstatus,i. v. Drogenabusus,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,16464661000119100,NA,NA,NA,History of intravenous drug abuse
+111,02-02-09-06-06,allgemeinstatus,i. v. Drogenabusus,TRUE,TRUE,2 „Z. n.“,NA,NA,FALSE,1,value_item,0,NA,410513005,NA,NA,In the past
+112,02-02-10,allgemeinstatus,Maligne Tumoren,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+113,02-02-10,allgemeinstatus,Maligne Tumoren,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,363346000,NA,NA,NA,Malignant neoplastic disease
+114,02-02-10-01-01,allgemeinstatus,Bezeichnung,TRUE,TRUE,-,Text,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+115,02-02-11,allgemeinstatus,Neurologische Erkrankungen,TRUE,TRUE,-,NA,NA,FALSE,1,value_item,0,118940003,NA,NA,NA,Disorder of nervous system
+116,02-02-11-01-01,allgemeinstatus,Multiple Sklerose,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+117,02-02-11-01-01,allgemeinstatus,Multiple Sklerose,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,24700007,NA,NA,NA,Multiple Sclerosis
+118,02-02-11-02-02,allgemeinstatus,Periphere Polyneuropathie,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+119,02-02-11-02-02,allgemeinstatus,Periphere Polyneuropathie,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,42345000,NA,NA,NA,Polyneuropathy
+120,02-02-11-03-03,allgemeinstatus,Morbus Parkinson,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+121,02-02-11-03-03,allgemeinstatus,Morbus Parkinson,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,49049000,NA,NA,NA,Parkinson´s disease
+122,02-02-12,allgemeinstatus,Weitere Erkrankungen,TRUE,TRUE,-,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+123,02-02-12-01-01,allgemeinstatus,Lipödem,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+124,02-02-12-01-01,allgemeinstatus,Lipödem,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,234102003,NA,NA,NA,Lipedema
+125,02-02-12-01-01,allgemeinstatus,Lokalisation,TRUE,TRUE,1 „links“ (Lipödem),NA,NA,FALSE,0,NA,0,7771000,NA,NA,NA,left
+126,02-02-12-01-01,allgemeinstatus,Lokalisation,TRUE,TRUE,2 „rechts“ (Liipödem),NA,NA,FALSE,0,NA,0,24028007,NA,NA,NA,right
+127,02-02-12-02-02,allgemeinstatus,Lymphödem,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+128,02-02-12-02-02,allgemeinstatus,Lymphödem,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,234097001,NA,NA,NA,Lymphedema
+129,02-02-12-02-02,allgemeinstatus,Lokalisation,TRUE,TRUE,1 „links“ (Lymphödem),NA,NA,FALSE,0,NA,0,7771000,NA,NA,NA,left
+130,02-02-12-02-02,allgemeinstatus,Lokalisation,TRUE,TRUE,2 „rechts“ (Lymphödem),NA,NA,FALSE,0,NA,0,24028007,NA,NA,NA,right
+131,02-02-12-03-03,allgemeinstatus,Sonstige,TRUE,TRUE,Weitere Krankheiten,Text,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+132,02-03,allgemeinstatus,Ulkusrelevante Medikamentenanamnesea,TRUE,TRUE,-,NA,Notwendig zur Bewertung der therapeutischen Situation,FALSE,0,NA,0,NA,NA,NA,NA,NA
+133,02-03,allgemeinstatus,Schmerztherapie,TRUE,TRUE,Schmerztherapie,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+134,02-03-01,allgemeinstatus,Schmerztherapie (WHO I),TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,WHO analgesic ladder
+135,02-03-01,allgemeinstatus,Schmerztherapie (WHO I),TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,373216001,16403005,713443004,NA,Non-opioid analgesic /   Non-steroidal anti-inflammatory agent (product) NSAID deutsch NSAR/ Non-steroidal anti-inflammatory agent therapy (procedure)
+136,02-03-02,allgemeinstatus,Schmerztherapie (WHO II),TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,https://ch.universimed.com/fachthemen/8197
+137,02-03-02,allgemeinstatus,Schmerztherapie (WHO II),TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,NA,373562008,387494007,NA,Tilidine / Codeine
+138,02-03-03,allgemeinstatus,Schmerztherapie (WHO III),TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+139,02-03-03,allgemeinstatus,Schmerztherapie (WHO III),TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,373699000,NA,NA,NA,Morphinan opioid
+140,02-03-04,allgemeinstatus,Antibiotikatherapie,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+141,02-03-04,allgemeinstatus,Antibiotikatherapie,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,281789004,NA,NA,NA,antibiotic therapy
+142,02-03-05,allgemeinstatus,Immunsuppressiva,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+143,02-03-05,allgemeinstatus,Immunsuppressiva,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,86553008,NA,NA,NA,immunosuppressive therapy
+144,02-03-06,allgemeinstatus,Antikoagulanzien,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+145,02-03-06,allgemeinstatus,Antikoagulanzien,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,182764009,NA,NA,NA,anticoagulant therapy
+146,02-03-07,allgemeinstatus,Diuretika,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+147,02-03-07,allgemeinstatus,Diuretika,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,value_item,0,722048006,NA,NA,NA,diuretic therapy
+148,02-04,allgemeinstatus,Ernährungsstatus,FALSE,TRUE,1 „über“,NA,Notwendig als potenzieller Prädiktor,FALSE,1,value_item,0,414915002,58424009,NA,NA,obese / overeating
+149,02-04,allgemeinstatus,Ernährungsstatus,FALSE,TRUE,2 „unter“,NA,Notwendig als potenzieller Prädiktor,FALSE,1,value_item,0,238108007,2492009,NA,NA,cachectic / malnutrition
+150,02-04,allgemeinstatus,Ernährungsstatus,FALSE,TRUE,3 „normal“,NA,Notwendig als potenzieller Prädiktor,FALSE,1,nicht eindeutig,0,43664005,81323004,364649005,NA,normal weight / normal body condition / regularity of eating
+151,02-04,allgemeinstatus,Ernährungsstatus,FALSE,TRUE,Ernährungsstatus,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+152,03-01,wundanamnese,Wundanzahl,TRUE,TRUE,-,NA,Anzahl der bestehenden Wunden,FALSE,1,key_item,0,246205007,NA,NA,NA,quantity
+153,03-02,wundanamnese,Wundart,TRUE,TRUE,1 „Ulcus cruris venosum“,NA,"*Definition: immunologische Prozesse/Vaskulitidender Haut und Unterhaut, die zur Wundentstehung führen, z. B. Pyoderma gangraenosum, leukozytoklastische Vaskulitis etc.",FALSE,1,value_item,0,41915009,NA,NA,NA,venous ulcer
+154,03-02,wundanamnese,Wundart,TRUE,TRUE,2 „Ulcus cruris arteriosum“,NA,"*Definition: immunologische Prozesse/Vaskulitidender Haut und Unterhaut, die zur Wundentstehung führen, z. B. Pyoderma gangraenosum, leukozytoklastische Vaskulitis etc.",FALSE,1,value_item,0,13954005,NA,NA,NA,ischemic ulcer / arterial ulcer
+155,03-02,wundanamnese,Wundart,TRUE,TRUE,3 „Ulcus cruris mixtum“,NA,"*Definition: immunologische Prozesse/Vaskulitidender Haut und Unterhaut, die zur Wundentstehung führen, z. B. Pyoderma gangraenosum, leukozytoklastische Vaskulitis etc.",FALSE,1,value_item,0,NA,238792006,261055001,NA,Mixed arteriovenous leg ulcer (disorder) / ateriovenous
+156,03-02,wundanamnese,Wundart,TRUE,TRUE,4 „vaskulitisch/immunologisch*“,NA,"*Definition: immunologische Prozesse/Vaskulitidender Haut und Unterhaut, die zur Wundentstehung führen, z. B. Pyoderma gangraenosum, leukozytoklastische Vaskulitis etc.",FALSE,1,value_item,0,NA,255451006,255451006,NA,vascularized nur verfügbar eigentlich im med. vascular /  immunologic
+157,03-02,wundanamnese,Wundart,TRUE,TRUE,5 „medikamentös“,NA,"*Definition: immunologische Prozesse/Vaskulitidender Haut und Unterhaut, die zur Wundentstehung führen, z. B. Pyoderma gangraenosum, leukozytoklastische Vaskulitis etc.",FALSE,1,value_item,0,NA,NA,NA,NA,NA
+158,03-02,wundanamnese,Wundart,TRUE,TRUE,6 „maligne“,NA,"*Definition: immunologische Prozesse/Vaskulitidender Haut und Unterhaut, die zur Wundentstehung führen, z. B. Pyoderma gangraenosum, leukozytoklastische Vaskulitis etc.",FALSE,1,value_item,0,21594007,NA,NA,NA,malignant
+159,03-02,wundanamnese,Wundart,TRUE,TRUE,7 „Sonstige“,NA,"*Definition: immunologische Prozesse/Vaskulitidender Haut und Unterhaut, die zur Wundentstehung führen, z. B. Pyoderma gangraenosum, leukozytoklastische Vaskulitis etc.",FALSE,1,value_item,0,74964007,NA,NA,NA,other
+160,03-02,wundanamnese,Wundart,TRUE,TRUE,Wundart,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+161,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,01 „Oberschenkel re“,Text,NA,TRUE,1,value_item,0,11207009,209570001,NA,NA,right thigh / entire right thigh
+162,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,02 „Oberschenkel li“,Text,NA,TRUE,1,value_item,0,61396006,NA,NA,NA,left thigh
+163,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,03 „Knie re“,Text,NA,TRUE,1,value_item,0,6757004,NA,NA,NA,right knee
+164,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,04 „Knie li“,Text,NA,TRUE,1,value_item,0,82169009,NA,NA,NA,left knee
+165,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,05 „Unterschenkel re“,Text,NA,TRUE,1,value_item,0,32696007,NA,NA,NA,right lower leg
+166,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,06 „Unterschenkel li“,Text,NA,TRUE,1,value_item,0,48979004,NA,NA,NA,left lower leg
+167,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,07 „Sprunggelenk re“,Text,NA,TRUE,1,value_item,0,6685009,NA,NA,NA,right ankle
+168,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,08 „Sprunggelenk li“,Text,NA,TRUE,1,value_item,0,51636004,NA,NA,NA,left ankle
+169,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,09 „Fußrücken re“,Text,NA,TRUE,1,value_item,0,723970004,NA,NA,NA,arch of right foot
+170,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,10 „Fußrücken li“,Text,NA,TRUE,1,value_item,0,723969000,NA,NA,NA,arch of left foot
+171,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,11 „Ferse re (nicht Fußsohle)“,Text,NA,TRUE,1,value_item,0,723607002,NA,NA,NA,right heel
+172,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,12 „Ferse li (nicht Fußsohle)“,Text,NA,TRUE,1,value_item,0,723606006,NA,NA,NA,left heel
+173,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,13 „Fußsohle re“,Text,NA,TRUE,1,value_item,0,761975003,NA,NA,NA,skin of sole right food
+174,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,14 „Fußsohle li“,Text,NA,TRUE,1,value_item,0,761974004,NA,NA,NA,skin of sole left food
+175,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,15 „Zehen rechts“,Text,NA,TRUE,1,value_item,0,782386004,785709003,NA,NA,entire toe of right foot / all toes right foot
+176,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,16 „Zehen links“,Text,NA,TRUE,1,value_item,0,721027006,785708006,NA,NA,entire toe of left foot / all toes left foot -> nähere Beschreibung durch entsprechenden Zeh möglich
+177,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,17 „Sonstiges“,Text,NA,TRUE,1,value_item,0,74964007,NA,NA,NA,other
+178,03-03,wundanamnese,Wundlokalisation,TRUE,TRUE,Wundlokalisation,NA,NA,TRUE,1,key_item,1,NA,NA,NA,NA,NA
+179,03-04,wundanamnese,Wunddauer der Zielwunde,TRUE,TRUE,-,In Monaten,Gemeint sind sowohl die Wunddauer bei Erstvorstellung (Baseline) wie auch die kontinuierliche Erfassung der Gesamtwundzeit im Thera- pieverlauf,FALSE,1,key_item,0,103335007,NA,NA,NA,duration
+180,03-05,wundanamnese,Rezidivulkus,TRUE,TRUE,0 „nein“,NA,Definitionen beachten,FALSE,0,key_item,0,313185002,NA,NA,NA,no recurrence of problem
+181,03-05,wundanamnese,Rezidivulkus,TRUE,TRUE,1 „ja“,NA,Definitionen beachten,FALSE,1,key_item,0,161917009,NA,NA,NA,recurrence of problem
+182,04-01,wundstatus,Standardisierte Fotodokumentation,TRUE,TRUE,Mit Maßstab und Weißabgleich,NA,"Im alphanumerischen Datensatz nur Dichotom, vergleiche sonst Dokumentationsstan- dard",FALSE,1,key_item,0,723394009,NA,NA,NA,photographic image record
+183,04-02,wundstatus,Wundbelag,FALSE,TRUE,0 „keiner“,NA,NA,TRUE,1,value_item,0,260413007,NA,NA,NA,non
+184,04-02,wundstatus,Wundbelag,FALSE,TRUE,1 „Nekrose“,NA,NA,TRUE,1,value_item,0,6574001,NA,NA,NA,necrosis
+185,04-02,wundstatus,Wundbelag,FALSE,TRUE,2 „Fibrin“,NA,NA,TRUE,1,value_item,0,113361004,NA,NA,NA,fibrin
+186,04-02,wundstatus,Wundbelag,FALSE,TRUE,3 „Nekrose und Fibrin“,NA,NA,TRUE,1,value_item,0,NA,NA,NA,NA,NA
+187,04-02,wundstatus,Wundbelag,FALSE,TRUE,Wundbelag,NA,NA,TRUE,1,key_item,1,NA,NA,NA,NA,NA
+188,04-03,wundstatus,Wundgrund,FALSE,TRUE,1 „Sehne“,NA,Dermis umfasst auch das Granulationsgewebe,TRUE,1,value_item,0,13024002,NA,NA,NA,tendon
+189,04-03,wundstatus,Wundgrund,FALSE,TRUE,2 „Knochen“,NA,Dermis umfasst auch das Granulationsgewebe,TRUE,1,value_item,0,309676001,NA,NA,NA,O/e bone
+190,04-03,wundstatus,Wundgrund,FALSE,TRUE,3 „Muskel“,NA,Dermis umfasst auch das Granulationsgewebe,TRUE,1,value_item,0,309674003,NA,NA,NA,O/e muscle
+191,04-03,wundstatus,Wundgrund,FALSE,TRUE,4 „Fettgewebe“,NA,Dermis umfasst auch das Granulationsgewebe,TRUE,1,value_item,0,55603005,NA,NA,NA,fatty tissue
+192,04-03,wundstatus,Wundgrund,FALSE,TRUE,5 „Dermis“,NA,Dermis umfasst auch das Granulationsgewebe,TRUE,1,value_item,0,53534000,NA,NA,NA,dermis
+193,04-03,wundstatus,Wundgrund,FALSE,TRUE,Wundgrund,NA,NA,TRUE,1,key_item,1,NA,NA,NA,NA,NA
+194,04-04,wundstatus,Granulation,FALSE,TRUE,0 „keine“,NA,NA,FALSE,1,value_item,0,260413007,NA,NA,NA,none
+195,04-04,wundstatus,Granulation,FALSE,TRUE,1 „teilweise“,NA,NA,FALSE,1,value_item,0,255609007,NA,NA,NA,partial
+196,04-04,wundstatus,Granulation,FALSE,TRUE,2 „komplett“,NA,NA,FALSE,1,value_item,0,255503000,769408005,NA,NA,entire / completely
+197,04-04,wundstatus,Granulation,FALSE,TRUE,Granulation,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+198,04-05,wundstatus,Epithelisierung,FALSE,TRUE,0 „keine“,NA,Komplett entspricht 100% Epithelisierung,FALSE,1,value_item,0,260413007,NA,NA,NA,NA
+199,04-05,wundstatus,Epithelisierung,FALSE,TRUE,1 „teilweise“,NA,Komplett entspricht 100% Epithelisierung,FALSE,1,value_item,0,255609007,NA,NA,NA,NA
+200,04-05,wundstatus,Epithelisierung,FALSE,TRUE,2 „komplett“,NA,Komplett entspricht 100% Epithelisierung,FALSE,1,value_item,0,255503000,NA,NA,NA,NA
+201,04-05,wundstatus,Epithelisierung,FALSE,TRUE,Epithelisierung,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+202,04-06,wundstatus,Exsudatmenge (exakte Dokumentation derzeit nicht möglich),FALSE,TRUE,0 „kein“,NA,Exsudatmenge,FALSE,1,value_item,0,42142007,441280001,NA,NA,exudate / color of exudate
+203,04-06,wundstatus,Exsudatmenge (exakte Dokumentation derzeit nicht möglich),FALSE,TRUE,1 „mäßig“,NA,NA,FALSE,1,value_item,0,6736007,NA,NA,NA,moderate
+204,04-06,wundstatus,Exsudatmenge (exakte Dokumentation derzeit nicht möglich),FALSE,TRUE,2 „viel“,NA,NA,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+205,04-07,wundstatus,Beschaffenheit des Exsudats,FALSE,TRUE,1 „klar“,NA,NA,TRUE,1,value_item,0,228051000,263707001,NA,NA,clear fluid / clear
+206,04-07,wundstatus,Beschaffenheit des Exsudats,FALSE,TRUE,2 „blutig“,NA,NA,TRUE,1,value_item,0,NA,NA,NA,NA,NA
+207,04-07,wundstatus,Beschaffenheit des Exsudats,FALSE,TRUE,3 „grün/braun/gelb“,NA,NA,TRUE,1,value_item,0,NA,NA,NA,NA,NA
+208,04-07,wundstatus,Beschaffenheit des Exsudats,FALSE,TRUE,Beschaffenheit des Exsudats,NA,NA,TRUE,1,key_item,1,NA,NA,NA,NA,NA
+209,04-08,wundstatus,Wundgröße (0) = Abheilung,TRUE,TRUE,Breite,cm,Alternative Verwendung der genannten Maße 1 × senkrecht 1 × waagerecht,FALSE,1,key_item,0,NA,NA,NA,NA,NA
+210,04-08,wundstatus,Wundgröße (0) = Abheilung,TRUE,TRUE,Fläche,cm2,Alternative Verwendung der genannten Maße 1 × senkrecht 1 × waagerecht,FALSE,1,key_item,0,NA,NA,NA,NA,NA
+211,04-08,wundstatus,Wundgröße (0) = Abheilung,TRUE,TRUE,Länge,cm,Alternative Verwendung der genannten Maße 1 × senkrecht 1 × waagerecht,FALSE,1,key_item,0,NA,NA,NA,NA,NA
+212,04-08,wundstatus,Wundgröße (0) = Abheilung,TRUE,TRUE,Wundgröße,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+213,04-09,wundstatus,Abheilungsstatus,FALSE,TRUE,1 „geheilt“,NA,Subjektive Einschätzung des Abheilungsstatus „Geheilt“ entspricht komplettem Wundschluss,FALSE,1,value_item,0,298006005,162867003,125313005,NA,wound healed / O/e wound healed / healed ulcer
+214,04-09,wundstatus,Abheilungsstatus,FALSE,TRUE,2 „verbessert“,NA,Subjektive Einschätzung des Abheilungsstatus „Geheilt“ entspricht komplettem Wundschluss,FALSE,1,value_item,0,3442003,NA,NA,NA,better??
+215,04-09,wundstatus,Abheilungsstatus,FALSE,TRUE,3 „unverändert“,NA,Subjektive Einschätzung des Abheilungsstatus „Geheilt“ entspricht komplettem Wundschluss,FALSE,1,value_item,0,260388006,NA,NA,NA,no status change
+216,04-09,wundstatus,Abheilungsstatus,FALSE,TRUE,4 „verschlechtert“,NA,Subjektive Einschätzung des Abheilungsstatus „Geheilt“ entspricht komplettem Wundschluss,FALSE,1,value_item,0,231877006,NA,NA,NA,worsened
+217,04-09,wundstatus,Abheilungsstatus,FALSE,TRUE,Abheilungsstatus,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+218,04-10,wundstatus,Wundrand/ Hautumgebung,FALSE,TRUE,1 „reizlos“,NA,NA,TRUE,1,value_item,0,444884003,707313006,NA,NA,intact skin / no inflammation; eigentlich non-irritant skin
+219,04-10,wundstatus,Wundrand/ Hautumgebung,FALSE,TRUE,2 „gerötet“,NA,NA,TRUE,1,value_item,0,164424003,NA,NA,NA,skin red on examination; besser reddened skin
+220,04-10,wundstatus,Wundrand/ Hautumgebung,FALSE,TRUE,3 „ödematös“,NA,NA,TRUE,1,value_item,0,95322002,NA,NA,NA,edematous skin
+221,04-10,wundstatus,Wundrand/ Hautumgebung,FALSE,TRUE,4 „mazeriert“,NA,NA,TRUE,1,value_item,0,3644009,NA,NA,NA,macerated skin
+222,04-10,wundstatus,Wundrand/ Hautumgebung,FALSE,TRUE,5 „livide“,NA,NA,TRUE,1,value_item,0,13423002,NA,NA,NA,lividity (black and blue color)
+223,04-10,wundstatus,Wundrand/ Hautumgebung,FALSE,TRUE,6 „nekrotisch“,NA,NA,TRUE,1,value_item,0,6574001,NA,NA,NA,"necrotic (tissue) nicht verfügbar,  daher necrosis"
+224,04-10,wundstatus,Wundrand/ Hautumgebung,FALSE,TRUE,"7 „schuppend, hyperkeratotisch/terminiert“",NA,NA,TRUE,1,value_item,0,271761007,255424008,NA,NA,scaly skin / hyperkeratotic
+225,04-10,wundstatus,Wundrand/ Hautumgebung,FALSE,TRUE,Wundrand/ Hautumgebung,NA,NA,TRUE,1,key_item,1,NA,NA,NA,NA,NA
+226,04-11,wundstatus,Zeichen der lokalen Wundinfektion,TRUE,TRUE,0 „nein“,NA,NA,FALSE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+227,04-11,wundstatus,Zeichen der lokalen Wundinfektion,TRUE,TRUE,1 „ja“,NA,NA,FALSE,1,nicht eindeutig,0,76844004,162870004,NA,NA,Local infection of wound / O/e wound infected
+228,04-11,wundstatus,Wundinfektion,TRUE,TRUE,Wundinfektion,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+229,04-12,wundstatus,Geruch,FALSE,TRUE,0 „nein“,NA,Vorbehaltlich einer validen Einteilung,FALSE,0,nicht eindeutig,0,698751005,NA,NA,NA,abscence of  wound odor
+230,04-12,wundstatus,Geruch,FALSE,TRUE,1 „ja“,NA,Vorbehaltlich einer validen Einteilung,FALSE,1,nicht eindeutig,0,445916002,NA,NA,NA,wound odor
+231,04-12,wundstatus,Wundgeruch,FALSE,TRUE,Wundgeruch,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+232,04-13,wundstatus,Wundschmerz VW (letzte 7 Tage),TRUE,TRUE,VAS (visuelle Analogskala),0–10,VAS,FALSE,1,key_item,0,273903006,NA,NA,NA,Visual analog scale
+233,04-14,wundstatus,Wundschmerz Ruhe (letzte 7 Tage),FALSE,TRUE,VAS (visuelle Analogskala),0–10,VAS,FALSE,1,key_item,0,298012000,NA,NA,NA,wound pain
+234,05-01,diagnostik,Gehstreckenverminderung,FALSE,TRUE,0 „nein“,NA,Klinische Ergänzung zu 5.2,FALSE,0,NA,0,NA,NA,NA,NA,NA
+235,05-01,diagnostik,Gehstreckenverminderung,FALSE,TRUE,1 „ja“,NA,Klinische Ergänzung zu 5.2,FALSE,1,value_item,0,248244005,NA,NA,NA,walking distance reduced
+236,05-02,diagnostik,ABPI,TRUE,TRUE,Index,NA,Notwendig sind beidseits die Verschlussdrücke sowie die Indizes,FALSE,1,key_item,0,NA,NA,NA,NA,NA
+237,05-02-01,diagnostik,ABPI,FALSE,TRUE,Verschlussdruck,NA,NA,FALSE,1,key_item,0,NA,NA,NA,NA,NA
+238,05-03,diagnostik,Duplexsonographie,FALSE,TRUE,0 „nein“,NA,Inklusive Resultat der Refluxdiagnostik,FALSE,0,NA,0,NA,NA,NA,NA,NA
+239,05-03,diagnostik,Duplexsonographie,FALSE,TRUE,1 „ja“,NA,Inklusive Resultat der Refluxdiagnostik,FALSE,1,nicht eindeutig,0,312236008,16310003,NA,NA,duplex ultrasound / diagnostic ultrasonography
+240,05-03,diagnostik,Duplexsonographie,FALSE,TRUE,Resultat Refluxdiagnostik,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+241,05-04,diagnostik,Wundabstrich,FALSE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+242,05-04,diagnostik,Wundabstrich,FALSE,TRUE,1 „ja“,NA,NA,FALSE,1,nicht eindeutig,0,258531008,NA,NA,NA,wound swab
+243,05-05,diagnostik,Probeexzision,FALSE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+244,05-05,diagnostik,Probeexzision,FALSE,TRUE,1 „ja“,NA,NA,FALSE,1,nicht eindeutig,0,258415003,NA,NA,NA,biopsy sample
+245,05-06,diagnostik,Wundbezogene Labordiagnostik,FALSE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+246,05-06,diagnostik,Wundbezogene Labordiagnostik,FALSE,TRUE,1 „ja“,NA,NA,FALSE,1,nicht eindeutig,0,15220000,NA,NA,NA,laboratory test
+247,05-07,diagnostik,Laborparameter,FALSE,TRUE,1 „Leukozyten“,NA,NA,FALSE,1,key_item,0,24827003,NA,NA,NA,White blood cell abnormality (morphologic abnormality)
+248,05-07,diagnostik,Laborparameter,FALSE,TRUE,2 „CRP“,NA,NA,FALSE,1,key_item,0,61425002,NA,NA,NA,C-reactive protein
+249,05-07,diagnostik,Laborparameter,FALSE,TRUE,3 „Hämoglobin“,NA,NA,FALSE,1,key_item,0,38082009,NA,NA,NA,Hemoglobin
+250,05-08,diagnostik,Infektionsrisikoassessment,FALSE,TRUE,"WIRE, WAR",NA,Validierung der Risikoprädiktoren steht noch aus,FALSE,1,key_item,0,370782005,NA,NA,NA,Assessment of susceptibility for infection (procedure)
+251,06-01,therapie,Lokaltherapie,TRUE,TRUE,1 „Débridement“,NA,NA,TRUE,1,nicht eindeutig,0,85875009,NA,NA,NA,Debridement of wound of skin
+252,06-01,therapie,Lokaltherapie,TRUE,TRUE,2 „Wundspülung“,NA,NA,TRUE,1,nicht eindeutig,0,225116006,NA,NA,NA,Irrigation of wound
+253,06-01,therapie,Lokaltherapie,TRUE,TRUE,3 „Wundantiseptik“,NA,NA,TRUE,1,nicht eindeutig,0,261276004,NA,NA,NA,Medicinal product acting as antiseptic agen
+254,06-01,therapie,Lokaltherapie,TRUE,TRUE,4 „Wundumgebungsschutz“,NA,NA,TRUE,1,nicht eindeutig,0,225358003,NA,NA,NA,wound care
+255,06-01,therapie,Lokaltherapie,TRUE,TRUE,5 „primärer Wundverband“,NA,NA,TRUE,1,nicht eindeutig,0,405041005,NA,NA,NA,Wound healing status: primary intention (observable entity)
+256,06-01,therapie,Lokaltherapie,TRUE,TRUE,6 „sekundärer Wundverband“,NA,NA,TRUE,1,nicht eindeutig,0,405041005,NA,NA,NA,Wound healing status: primary intention (observable entity)
+257,06-01,therapie,Lokaltherapie,TRUE,TRUE,7 „lokale Unterdrucktherapie“,NA,NA,TRUE,1,nicht eindeutig,0,700682002,NA,NA,NA,Negative-pressure wound therapy tubing set (physical object)
+258,06-01,therapie,Lokaltherapie,TRUE,TRUE,8 „Elektrostimulation“,NA,NA,TRUE,1,nicht eindeutig,0,57942008,NA,NA,NA,Therapeutic electrical stimulation
+259,06-01,therapie,Lokaltherapie,TRUE,TRUE,9 „Sonstige“,NA,NA,TRUE,0,NA,0,NA,NA,NA,NA,NA
+260,06-01-01,therapie,Débridement,FALSE,TRUE,1 „mechanisch“,Text,Präparat,TRUE,1,value_item,0,261018001,NA,NA,NA,mechanical
+261,06-01-01,therapie,Débridement,FALSE,TRUE,2 „chirurgisch“,Text,Präparat,TRUE,1,value_item,0,225148005,83578000,NA,NA,Surgical debridement of wound (procedure) / surgical
+262,06-01-01,therapie,Débridement,FALSE,TRUE,3 „Ultraschall“,Text,Präparat,TRUE,1,value_item,0,51797001,NA,NA,NA,ultrasonic waves
+263,06-01-01,therapie,Débridement,FALSE,TRUE,4 „autolytisch“,Text,Präparat,TRUE,1,value_item,0,NA,NA,NA,NA,autolytic
+264,06-01-01,therapie,Débridement,FALSE,TRUE,5 „enzymatisch“,Text,Präparat,TRUE,1,value_item,0,NA,NA,NA,NA,enzymatic
+265,06-01-01,therapie,Débridement,FALSE,TRUE,6 „Biochirurgie (Maden)“,Text,Präparat,TRUE,1,value_item,0,404916008,NA,NA,NA,Sterile maggot wound debridement (procedure) / biosurgical
+266,06-01-01,therapie,Débridement,FALSE,TRUE,7 „Sonstiges“,Text,Präparat,TRUE,0,NA,0,NA,NA,NA,NA,other
+267,06-01-02,therapie,Wundspülung,FALSE,TRUE,1 „nein“,Text,"Polihexanid: Prontosan, Lavasorb, Lavanid Octenidin: Octenilin-Wundspüllösung",TRUE,0,NA,0,NA,NA,NA,NA,NA
+268,06-01-02,therapie,Wundspülung,FALSE,TRUE,2 „Ringer-Lösung“,Text,"Polihexanid: Prontosan, Lavasorb, Lavanid Octenidin: Octenilin-Wundspüllösung",TRUE,1,value_item,0,NA,NA,NA,NA,Ringer´s solution / isotonic solution
+269,06-01-02,therapie,Wundspülung,FALSE,TRUE,"3 „Na Cl 0,9 %“",Text,"Polihexanid: Prontosan, Lavasorb, Lavanid Octenidin: Octenilin-Wundspüllösung",TRUE,1,value_item,0,387390002,427689006,NA,NA,NaCl (sodium chlorid) / percent sodium chlorid (qualifier value) /  auch saline solution nicht in Snomed vorhanden
+270,06-01-02,therapie,Wundspülung,FALSE,TRUE,4 „Polyhexanid“,Text,"Polihexanid: Prontosan, Lavasorb, Lavanid Octenidin: Octenilin-Wundspüllösung",TRUE,1,value_item,0,421952002,NA,NA,NA,Polyhexanide
+271,06-01-02,therapie,Wundspülung,FALSE,TRUE,5 „Octenidin“,Text,"Polihexanid: Prontosan, Lavasorb, Lavanid Octenidin: Octenilin-Wundspüllösung",TRUE,1,value_item,0,430477008,NA,NA,NA,Octenidine
+272,06-01-02,therapie,Wundspülung,FALSE,TRUE,6 „nasszierender Sauerstoff“,Text,"Polihexanid: Prontosan, Lavasorb, Lavanid Octenidin: Octenilin-Wundspüllösung",TRUE,1,value_item,0,NA,NA,NA,NA,nascent oxygen?
+273,06-01-02,therapie,Wundspülung,FALSE,TRUE,7 „Sonstige“,Text,"Polihexanid: Prontosan, Lavasorb, Lavanid Octenidin: Octenilin-Wundspüllösung",TRUE,0,NA,0,NA,NA,NA,NA,NA
+274,06-01-03,therapie,Wundantiseptik,FALSE,TRUE,1 „nein“,NA,"Octenidin: Octenisept Polihexanid: Serasept, Polihexanidlösung 0,02 oder 0,04%",FALSE,0,NA,0,NA,NA,NA,NA,NA
+275,06-01-03,therapie,Wundantiseptik,FALSE,TRUE,2 „Octenidin“,NA,"Octenidin: Octenisept Polihexanid: Serasept, Polihexanidlösung 0,02 oder 0,04%",FALSE,1,value_item,0,430477008,NA,NA,NA,Octenidine
+276,06-01-03,therapie,Wundantiseptik,FALSE,TRUE,3 „PVP-Jod“,NA,"Octenidin: Octenisept Polihexanid: Serasept, Polihexanidlösung 0,02 oder 0,04%",FALSE,1,value_item,0,386989006,NA,NA,NA,Povidone iodine
+277,06-01-03,therapie,Wundantiseptik,FALSE,TRUE,4„Polyhexanid“,NA,"Octenidin: Octenisept Polihexanid: Serasept, Polihexanidlösung 0,02 oder 0,04%",FALSE,1,value_item,0,421952002,NA,NA,NA,Polyhexanide
+278,06-01-04,therapie,Wundumgebungsschutz,FALSE,TRUE,0 „nein“,Text,Präparat,TRUE,0,NA,0,NA,NA,NA,NA,NA
+279,06-01-04,therapie,Wundumgebungsschutz,FALSE,TRUE,1 „ja“ mit Präparat,Text,Präparat,TRUE,1,key_item,0,225358003,NA,NA,NA,wound care
+280,06-01-05,therapie,Primärer Wundverband Antibakterielle Wundauflage,FALSE,FALSE,-,Text      –,"Präparat (z. B. hydroaktiver Verband, Trockensalbenver- band, aktive Wundauflage) –",FALSE,0,NA,0,182531007,NA,NA,NA,"dressing of wound Wundauflagen lassen sich weiter auffächern: Alginate, Hdydrogele, Hydrokolloidverbände"
+281,06-01-05,therapie,Primärer Wundverband Antibakterielle Wundauflage,FALSE,FALSE,Freitext mit Angabe Präparat,Text      –,"Präparat (z. B. hydroaktiver Verband, Trockensalbenver- band, aktive Wundauflage) –",TRUE,1,key_item,0,450964002,391676000,NA,NA,primary dressing / knitted polyester primary dressing
+282,06-01-06,therapie,Sekundärer Wundverband,FALSE,TRUE,Freitext mit Angabe Präparat,Text,Präparat (z. B. Kompresse),TRUE,1,key_item,0,450965001,NA,NA,NA,secondary dressing
+283,06-01-07,therapie,Lokale Unterdrucktherapie,FALSE,TRUE,0 „nein“,Text,Präparat,TRUE,0,NA,0,NA,NA,NA,NA,NA
+284,06-01-07,therapie,Lokale Unterdrucktherapie,FALSE,TRUE,1 „ja“,Text,Präparat,TRUE,1,value_item,0,700682002,NA,NA,NA,Negative-pressure wound therapy tubing set (physical object)
+285,06-01-08,therapie,Elektrostimulation,FALSE,TRUE,0 „nein“,Text,Präparat,TRUE,0,NA,0,NA,NA,NA,NA,NA
+286,06-01-08,therapie,Elektrostimulation,FALSE,TRUE,1 „ja“,Text,Präparat,TRUE,1,value_item,0,57942008,NA,NA,NA,Therapeutic electrical stimulation
+287,06-01-09,therapie,Sonstige,FALSE,TRUE,Präparat,Text,Präparat,TRUE,0,NA,0,NA,NA,NA,NA,NA
+288,06-02,therapie,Kausal orientierte Therapie,TRUE,TRUE,1 „Kompression“,NA,NA,TRUE,1,key_item,0,229567009,467848007,413899004,NA,intermittent compression therapy / compression stocking / compression bandaging
+289,06-02,therapie,Kausal orientierte Therapie,TRUE,TRUE,2 „operative Therapie“,NA,NA,TRUE,1,key_item,0,NA,NA,NA,NA,surgical therapy
+290,06-02,therapie,Kausal orientierte Therapie,TRUE,TRUE,3 „immunsuppressive Therapie“,NA,NA,TRUE,1,key_item,0,86553008,NA,NA,NA,immunosuppressive therapy
+291,06-02,therapie,Kausal orientierte Therapie,TRUE,TRUE,4 „Lymphdrainage“,NA,NA,TRUE,1,key_item,0,234303003,NA,NA,NA,drainage of lymphatics
+292,06-02,therapie,Kausal orientierte Therapie,TRUE,TRUE,5 „physikalische Therapie“,NA,NA,TRUE,1,key_item,0,91251008,NA,NA,NA,Physical therapy procedure (regime/therapy)/ Physiotherapie oder Kälte- und Wärmetherapie
+293,06-02,therapie,Kausal orientierte Therapie,TRUE,TRUE,6 „interventionelle Therapien“,NA,NA,TRUE,1,key_item,0,NA,NA,NA,NA,interventional therapy
+294,06-02,therapie,Kausal orientierte Therapie,TRUE,TRUE,7 „rheologische Therapien“,NA,NA,TRUE,1,key_item,0,NA,NA,NA,NA,rheological therapy
+295,06-02,therapie,Kausal orientierte Therapie,TRUE,TRUE,8 „Sonstige“,NA,NA,TRUE,0,NA,0,NA,NA,NA,NA,NA
+296,06-02-01,therapie,Kompressionstherapie,FALSE,TRUE,0 „nein“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,NA
+297,06-02-01,therapie,Kompressionstherapie,FALSE,TRUE,1 „ja“,Text,Präparat,FALSE,1,nicht eindeutig,0,NA,NA,NA,NA,compression therapy / treatment
+298,06-02-01-01-01,therapie,Kompressionsmaterialien,FALSE,TRUE,"1 „Kurzzug“, 0 „nein“, 1 „ja“",x,NA,FALSE,1,value_item,0,335353000,NA,NA,NA,short stretch compression bandage (physical object)
+299,06-02-01-01-01,therapie,Kompressionsmaterialien,FALSE,TRUE,"2 „Langzug“, 0 „nein“, 1 „ja“",x,NA,FALSE,1,value_item,0,NA,NA,NA,NA,Long(-)stretch bandage
+300,06-02-01-01-01,therapie,Kompressionsmaterialien,FALSE,TRUE,"3 „Strumpf“, 0 „nein“, 1 „ja“",x,NA,FALSE,1,value_item,0,467848007,NA,NA,NA,compression stocking
+301,06-02-01-01-01,therapie,Kompressionsmaterialien,FALSE,TRUE,"4 „Mehrkomponentensysteme“, 0 „nein“, 1 „ja“",x,NA,FALSE,1,value_item,0,NA,NA,NA,NA,multi-component system
+302,06-02-01-01-01,therapie,Kompressionsmaterialien,FALSE,TRUE,"5 „Sonstige“, 0 „nein“, 1 „ja“",x,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+303,06-02-01-01-01,therapie,Kompressionsmaterialien,FALSE,TRUE,"Wenn 6.2.1 ja, dann „Kompressionsmaterialien“:",x,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+304,06-02-01-02-02,therapie,Kurzzugbinden,FALSE,TRUE,0 „nein“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,NA
+305,06-02-01-02-02,therapie,Kurzzugbinden,FALSE,TRUE,1 „ja“,Text,Präparat,FALSE,1,value_item,0,335353000,NA,NA,NA,short stretch compression bandage
+306,06-02-01-03-03,therapie,Zinkleimbinden,FALSE,TRUE,0 „nein“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,NA
+307,06-02-01-03-03,therapie,Zinkleimbinden,FALSE,TRUE,1 „ja“,Text,Präparat,FALSE,1,value_item,0,348648002,NA,NA,NA,zinc paste bandage
+308,06-02-01-04-04,therapie,Mehrkomponentenfertigsystem,FALSE,TRUE,0 „nein“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,NA
+309,06-02-01-04-04,therapie,Mehrkomponentenfertigsystem,FALSE,TRUE,1 „ja“,Text,Präparat,FALSE,1,value_item,0,NA,NA,NA,NA,NA
+310,06-02-01-05-05,therapie,Ulkusstrumpf,FALSE,TRUE,0 „nein“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,NA
+311,06-02-01-05-05,therapie,Ulkusstrumpf,FALSE,TRUE,1 „ja“,Text,Präparat,FALSE,1,value_item,0,408118001,NA,NA,NA,venous ulcer compression stocking
+312,06-02-01-06-06,therapie,Kompressionsstrumpf nach Maß,FALSE,TRUE,0 „nein“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,NA
+313,06-02-01-06-06,therapie,Kompressionsstrumpf nach Maß,FALSE,TRUE,1 „ja“,Text,Präparat,FALSE,1,value_item,0,467848007,NA,NA,NA,compression stocking eigentlich custom made compression stocking
+314,06-02-01-07-07,therapie,Sonstige,FALSE,TRUE,0 „nein“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,NA
+315,06-02-01-07-07,therapie,Sonstige,FALSE,TRUE,1 „ja“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,other
+316,06-02-01-08-08,therapie,Anziehhilfe,FALSE,TRUE,0 „nein“,Text,Präparat,FALSE,0,NA,0,NA,NA,NA,NA,NA
+317,06-02-01-08-08,therapie,Anziehhilfe,FALSE,TRUE,1 „ja“,Text,Präparat,FALSE,1,value_item,0,467763002,NA,NA,NA,compression stocking applicator
+318,06-02-02,therapie,Operative Therapie,FALSE,TRUE,1 „Varizenstripping V. saphena magna oder parva“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,265855005,175830001,175831002,NA,varicose vein stripping / Stripping of the long saphenous vein (procedure) /  Stripping of the short saphenous vein (procedure)
+319,06-02-02,therapie,Operative Therapie,FALSE,TRUE,10 „Spalthaut“/„Stanztransplantat“/ „Keratinozytentransplantation“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,NA,NA,NA,NA,keratinocyte transplantation
+320,06-02-02,therapie,Operative Therapie,FALSE,TRUE,10 „Spalthaut“/„Stanztransplantat“/ „Keratinozytentransplantation“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,NA,NA,NA,NA,NA
+321,06-02-02,therapie,Operative Therapie,FALSE,TRUE,11 „sonstige Wunddeckungsverfahren“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,NA,NA,NA,NA,NA
+322,06-02-02,therapie,Operative Therapie,FALSE,TRUE,2 „Seitenaststripping“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,NA,NA,NA,NA,NA
+323,06-02-02,therapie,Operative Therapie,FALSE,TRUE,"3 „interventionelle Venenoperation, Laser oder Schaumsklerosierung der V. saphena magna oder parva“",NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,274023003,1636000,NA,NA,varicosis vein operation /  Injection of sclerosing agent in varicose vein (procedure) or Sclerotherapy of varicose vein
+324,06-02-02,therapie,Operative Therapie,FALSE,TRUE,"4 „sonstige Venenverfahren, z. B. Heiß-Dampf-",NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,NA,NA,NA,NA,Steam Vein Sclerosis SVS
+325,06-02-02,therapie,Operative Therapie,FALSE,TRUE,5 „Bypass bei p AVK“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,76580007,399957001,NA,NA,Peripheral arterial bypass (procedure) / Peripheral arterial occlusive disease (disorder
+326,06-02-02,therapie,Operative Therapie,FALSE,TRUE,6 „Stenteinlage bei p AVK“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,103716009,NA,NA,NA,stent placement
+327,06-02-02,therapie,Operative Therapie,FALSE,TRUE,7 „chirurgisches Débridement“ (wenn durchgeführt 6.2.6.1/6.2.6.2),NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,225148005,NA,NA,NA,Surgical debridement of wound (procedure)
+328,06-02-02,therapie,Operative Therapie,FALSE,TRUE,8 „Fasziektomie“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,74422001,NA,NA,NA,Fasciectomy
+329,06-02-02,therapie,Operative Therapie,FALSE,TRUE,9 „Mesh-/Spalthauttransplantation“,NA,Zu 10 Keratinozytentransplantation: Gesetzeskonforme Therapieform,TRUE,1,nicht eindeutig,0,119561005,NA,NA,NA,Grafting procedure
+330,06-02-02-01-01,therapie,Chirurgisches Débridement Setting,FALSE,TRUE,1 „stationär“,NA,NA,FALSE,1,value_item,0,255323003,NA,NA,NA,stationary
+331,06-02-02-01-01,therapie,Chirurgisches Débridement Setting,FALSE,TRUE,2 „ambulant“,NA,NA,FALSE,1,value_item,0,255327002,371883000,NA,NA,ambulatory / outpatient procedure
+332,06-02-02-01-01,therapie,Chirurgisches Débridement Setting,FALSE,TRUE,Chirurgisches Débridement Setting,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+333,06-02-02-02-02,therapie,Chirurgisches Débridement Narkose,FALSE,TRUE,0 „nein“,NA,NA,FALSE,0,NA,0,NA,NA,NA,NA,NA
+334,06-02-02-02-02,therapie,Chirurgisches Débridement Narkose,FALSE,TRUE,1 „ja“,NA,NA,FALSE,1,key_item,0,225148005,NA,NA,NA,Surgical debridement of wound (procedure)
+335,06-02-03,therapie,Immunsuppressive Therapie als Wundtherapie (Spezifizierung s. Medikamentenanamnese),FALSE,TRUE,0 „nein“,NA,"Ja, wenn Therapie läuft",FALSE,0,NA,0,NA,NA,NA,NA,NA
+336,06-02-03,therapie,Immunsuppressive Therapie als Wundtherapie (Spezifizierung s. Medikamentenanamnese),FALSE,TRUE,1 „ja“,NA,"Ja, wenn Therapie läuft",FALSE,1,key_item,0,86553008,NA,NA,NA,immunosuppressive therapy
+337,06-02-04,therapie,Lymphdrainage,FALSE,TRUE,0 „nein“,NA,Komplexe physikalische Entstau- ungstherapie (KPE),FALSE,0,NA,0,NA,NA,NA,NA,NA
+338,06-02-04,therapie,Lymphdrainage,FALSE,TRUE,1 „ja“,NA,Komplexe physikalische Entstau- ungstherapie (KPE),FALSE,1,key_item,0,234303003,445417000,NA,NA,drainage of lymphatics / Decongestive lymphatic therapy (regime/therapy)
+339,06-02-05,therapie,Physikalische Therapie,FALSE,TRUE,0 „nein“,NA,"Gangschulung, Bewegungsübungen",FALSE,0,NA,0,NA,NA,NA,NA,NA
+340,06-02-05,therapie,Physikalische Therapie,FALSE,TRUE,"1 „ja“, Angabe der Therapie",NA,"Gangschulung, Bewegungsübungen",FALSE,1,key_item,0,74914000,85680003,NA,NA,gait training procedure / range of motion exercise
+341,06-02-06,therapie,Sonstige,FALSE,TRUE,Therapie,Text,NA,TRUE,0,NA,0,NA,NA,NA,NA,other
+342,06-03,therapie,Verbandwechsel durch wen,FALSE,TRUE,1 „Pflegefachkraft“,Text,NA,TRUE,1,value_item,0,18949003,106292003,NA,NA,change of dressing / professional nurse
+343,06-03,therapie,Verbandwechsel durch wen,FALSE,TRUE,2 „Arzt/Ärztin“,Text,NA,TRUE,1,value_item,0,309343006,NA,NA,NA,physician
+344,06-03,therapie,Verbandwechsel durch wen,FALSE,TRUE,3 „medizinische/r Fachangestellte/r“,Text,NA,TRUE,1,value_item,0,22515006,NA,NA,NA,medical assistant
+345,06-03,therapie,Verbandwechsel durch wen,FALSE,TRUE,4 „Lymphtherapeut/in“,Text,NA,TRUE,1,value_item,0,NA,NA,NA,NA,lymphatic therapist
+346,06-03,therapie,Verbandwechsel durch wen,FALSE,TRUE,5 „Sonstige“,Text,NA,TRUE,1,value_item,0,NA,NA,NA,NA,other
+347,06-03,therapie,Berufsgruppe,FALSE,TRUE,Berufsgruppe,NA,NA,FALSE,1,key_item,1,NA,NA,NA,NA,NA
+348,06-04,therapie,Behandlungsziele,FALSE,TRUE,1 „beschleunigter Wundschluss“,Text,NA,TRUE,1,value_item,0,18867006,746011009,NA,NA,wound healing / wound closure / (accelerated) wound closure
+349,06-04,therapie,Behandlungsziele,FALSE,TRUE,10 „Förderung von Granulation und Epithelisierung“,Text,NA,TRUE,1,value_item,0,NA,NA,NA,NA,NA
+350,06-04,therapie,Behandlungsziele,FALSE,TRUE,11 „Förderung der Angiogenese“,Text,NA,TRUE,1,value_item,0,NA,NA,NA,NA,NA
+351,06-04,therapie,Behandlungsziele,FALSE,TRUE,12 „Schmerzreduktion“,Text,NA,TRUE,1,value_item,0,182970005,NA,NA,NA,pain relief
+352,06-04,therapie,Behandlungsziele,FALSE,TRUE,13 „Geruchsminimierung“,Text,NA,TRUE,1,value_item,0,44169009,NA,NA,NA,anosmia
+353,06-04,therapie,Behandlungsziele,FALSE,TRUE,14 „Sonstige“,Text,NA,TRUE,1,value_item,0,NA,NA,NA,NA,NA
+354,06-04,therapie,Behandlungsziele,FALSE,TRUE,2 „Wundbettkonditionierung für die Defektabdeckung“,Text,NA,TRUE,1,value_item,0,NA,NA,NA,NA,wound bed preparation
+355,06-04,therapie,Behandlungsziele,FALSE,TRUE,3 „Vermeidung von Wundinfektion“,Text,NA,TRUE,1,value_item,0,76844004,169443000,NA,NA,wound infection / prevention
+356,06-04,therapie,Behandlungsziele,FALSE,TRUE,4 „verbesserte Wundreinigung“,Text,NA,TRUE,1,value_item,0,225150002,NA,NA,NA,cleansing wound
+357,06-04,therapie,Behandlungsziele,FALSE,TRUE,5 „Exsudatmanagement“,Text,NA,TRUE,1,value_item,0,46449008,NA,NA,NA,exudation / management of exudate
+358,06-04,therapie,Behandlungsziele,FALSE,TRUE,6 „Wundschutz“,Text,NA,TRUE,1,value_item,0,225358003,NA,NA,NA,wound care / wound protection
+359,06-04,therapie,Behandlungsziele,FALSE,TRUE,7 „Volumen-/Flächenreduktion“,Text,NA,TRUE,1,value_item,0,397441001,NA,NA,NA,% area reduction
+360,06-04,therapie,Behandlungsziele,FALSE,TRUE,8 „Transplantatsicherung“,Text,NA,TRUE,1,value_item,0,NA,NA,NA,NA,NA
+361,06-04,therapie,Behandlungsziele,FALSE,TRUE,9 „Reduktion von Wundödemen“,Text,NA,TRUE,1,value_item,0,NA,NA,NA,NA,NA
+362,06-04,therapie,Behandlungsziele,FALSE,TRUE,Behandlungsziele,NA,NA,TRUE,1,key_item,1,NA,NA,NA,NA,NA
+363,06-05,therapie,Empfehlung Wundverbandwechselintervall,TRUE,TRUE,Freitext in Tagen,In Tagen,NA,FALSE,1,key_item,0,258703001,NA,NA,NA,day
+364,07-01,pro,Antwortoptionen Wund-QoL,TRUE,TRUE,1 „gar nicht“,NA,NA,FALSE,0,value_item,1,NA,NA,NA,NA,NA
+365,07-01,pro,Antwortoptionen Wund-QoL,TRUE,TRUE,2 „etwas“,NA,NA,FALSE,0,value_item,1,NA,NA,NA,NA,NA
+366,07-01,pro,Antwortoptionen Wund-QoL,TRUE,TRUE,3 „mäßig“,NA,NA,FALSE,0,value_item,1,NA,NA,NA,NA,NA
+367,07-01,pro,Antwortoptionen Wund-QoL,TRUE,TRUE,4 „ziemlich“,NA,NA,FALSE,0,value_item,1,NA,NA,NA,NA,NA
+368,07-01,pro,Antwortoptionen Wund-QoL,TRUE,TRUE,5 „sehr“,NA,NA,FALSE,0,value_item,1,NA,NA,NA,NA,NA
+369,07-01-01,pro,Schmerzen,TRUE,TRUE,Schmerzen,NA,NA,FALSE,0,key_item,0,22253000,NA,NA,NA,pain
+370,07-01-02,pro,Unangenehmer Geruch,TRUE,TRUE,Unangenehmer Geruch,NA,NA,FALSE,0,key_item,0,445916002,NA,NA,NA,wound odor
+371,07-01-03,pro,Störender Wundausfluss,TRUE,TRUE,Störender Wundausfluss,NA,NA,FALSE,0,key_item,0,225394004,NA,NA,NA,Assessment of fluid loss from wound (procedure)
+372,07-01-04,pro,Schlaf beeinträchtigt,TRUE,TRUE,Schlaf beeinträchtigt,NA,NA,FALSE,0,key_item,0,704414005,NA,NA,NA,At risk of sleep impairment (finding)
+373,07-01-05,pro,Behandlung belastend,TRUE,TRUE,Behandlung belastend,NA,NA,FALSE,0,key_item,0,NA,NA,NA,NA,the treatment is stressful
+374,07-01-06,pro,Niedergeschlagen,TRUE,TRUE,Niedergeschlagen,NA,NA,FALSE,0,key_item,0,366979004,NA,NA,NA,depressed mood
+375,07-01-07,pro,Frustriert,TRUE,TRUE,Frustriert,NA,NA,FALSE,0,key_item,0,224973000,NA,NA,NA,Feeling frustrated
+376,07-01-08,pro,Sorgen,TRUE,TRUE,Sorgen,NA,NA,FALSE,0,key_item,0,79015004,NA,NA,NA,worried
+377,07-01-09,pro,Angst vor Verschlechterung,TRUE,TRUE,Angst vor Verschlechterung,NA,NA,FALSE,0,key_item,0,390772001,NA,NA,NA,deterioration of status
+378,07-01-10,pro,Angst zu stoßen,TRUE,TRUE,Angst zu stoßen,NA,NA,FALSE,0,key_item,0,1402001,250059000,NA,NA,Fear or scared / bumps into things
+379,07-01-11,pro,Schlecht fortbewegen,TRUE,TRUE,Schlecht fortbewegen,NA,NA,FALSE,0,key_item,0,160693001,NA,NA,NA,poor mobility
+380,07-01-12,pro,Treppensteigen mühsam,TRUE,TRUE,Treppensteigen mühsam,NA,NA,FALSE,0,key_item,0,282195009,NA,NA,NA,Difficulty walking up stairs
+381,07-01-13,pro,Probleme Alltagstätigkeiten,TRUE,TRUE,Probleme Alltagstätigkeiten,NA,NA,FALSE,0,key_item,0,129025006,255469002,NA,NA,Activity of daily living / limited
+382,07-01-14,pro,Freizeitaktivitäten eingeschränkt,TRUE,TRUE,Freizeitaktivitäten eingeschränkt,NA,NA,FALSE,0,key_item,0,300742006,300737003,NA,NA,Difficulty participating in leisure activities (finding) /   Ability to participate in leisure activities (observable entity)
+383,07-01-15,pro,Aktivitätenmit anderen einschränken,TRUE,TRUE,Aktivitätenmit anderen einschränken,NA,NA,FALSE,0,key_item,0,NA,NA,NA,NA,NA
+384,07-01-16,pro,Hilfe anderer,TRUE,TRUE,Hilfe anderer,NA,NA,FALSE,0,key_item,0,160777004,NA,NA,NA,home help needed
+385,07-01-17,pro,Finanzielle Belastung,TRUE,TRUE,Finanzielle Belastung,NA,NA,FALSE,0,key_item,0,NA,NA,NA,NA,financial burden
+386,07-02,pro,Wie zufrieden sind Sie insgesamt mit der Versorgung Ihrer Erkrankung?,FALSE,TRUE,Wie zufrieden sind Sie insgesamt mit der Versorgung Ihrer Erkrankung?,NA,NA,FALSE,0,key_item,0,406193000,NA,NA,NA,client satisfaction
+387,07-02-01,pro,Wie zufrieden sind Sie insgesamtmit der Versorgung Ihrer Erkrankung?,FALSE,TRUE,1 „sehr zufrieden“,NA,NA,FALSE,0,value_item,0,NA,NA,NA,NA,NA
+388,07-02-01,pro,Wie zufrieden sind Sie insgesamtmit der Versorgung Ihrer Erkrankung?,FALSE,TRUE,2 „eher zufrieden“,NA,NA,FALSE,0,value_item,0,NA,NA,NA,NA,NA
+389,07-02-01,pro,Wie zufrieden sind Sie insgesamtmit der Versorgung Ihrer Erkrankung?,FALSE,TRUE,"3 „teils, teils“",NA,NA,FALSE,0,value_item,0,NA,NA,NA,NA,NA
+390,07-02-01,pro,Wie zufrieden sind Sie insgesamtmit der Versorgung Ihrer Erkrankung?,FALSE,TRUE,4 „eher unzufrieden“,NA,NA,FALSE,0,value_item,0,NA,NA,NA,NA,NA
+391,07-02-01,pro,Wie zufrieden sind Sie insgesamtmit der Versorgung Ihrer Erkrankung?,FALSE,TRUE,5 „sehr unzufrieden“,NA,NA,FALSE,0,value_item,0,NA,NA,NA,NA,NA
+392,07-02-01,pro,"Zufriedenheit (Versorgung, Therapie)",TRUE,TRUE,"Zufriedenheit (Versorgung, Therapie)",NA,NA,FALSE,0,key_item,0,NA,NA,NA,NA,NA
+393,08-01,ernaehrung,Ernährung,FALSE,TRUE,"Wichtig zu erheben, hierbei stehen folgende Instrumente  zur Verfügung: MNA (Minimal Nutrition Assessment), MUST (Malnutrition Universal Screening Tool), PEMU (Pflegerische Erfassung von Mangelernährung und ihren Ursachen), SGA (Subjective Global Assessment)",NA,NA,FALSE,0,nicht eindeutig,0,444297006,273849003,NA,NA,MUST /  SGA
+394,09-01,edukation,Patientenedukation,FALSE,TRUE,"Definition Patientenedukation: Edukation umfasst die Bereiche Information, Beratung, Schulung sowie Anleitung und orientiert sich an den individuellen Bedürfnissen und Möglichkeiten des Betroffenen [5]. Zu Beginn ist abzustecken, was die Betroffenen und deren Angehörige lernen können, d. h. lernen sie Maßnahmen kennen, z. B. die Anlage der Kompression selbstständig oder nur teilweise durchzuführen, oder geht es darum, dass sie lediglich verstehen warum diese Maßnahmen veranlasst und angewendet werden. Im Vordergrund der Edukation stehen die Ziele und Bedürfnisse des Patienten und seiner Angehörigen – nicht die des Behandlungsteams",NA,NA,FALSE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+395,09-01-01,edukation,Patientenedukation,FALSE,TRUE,1 „Bedarf nach Unterstützung“,NA,NA,TRUE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+396,09-01-01,edukation,Patientenedukation,FALSE,TRUE,2 „Patient ausreichend Informationen übermittelt“,NA,NA,TRUE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+397,09-01-02,edukation,Abzufragende Kriterien der Patientenedukation beim Ulcus cruris venosum,FALSE,FALSE,Abzufragende Kriterien der Patientenedukation beim Ulcus cruris venosum:,NA,NA,FALSE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+398,09-01-02,edukation,Abzufragende Kriterien der Patientenedukation beim Ulcus cruris venosum,FALSE,FALSE,"Ulcus cruris venosum, Informationen und Aufklärung zu: – Ursache/n der Wunde – Behandlungsmaßnahmen (u. a. Kompression) – Risikofaktoren (z. B. lange stehen und sitzen, Wärme) – Förderung der körperlichen Aktivität und Venensport – Rezidivvermeidung – Medikamentenumgang – Schmerzkontrolle – Fuß-/Nagelpflege (bei Bedarf professionelle Podologie) – Hautpflege – Lagerung der Beine – Rauch(er)entwöhnung – Auswahl/Anpassung von Bekleidung/Schuhen – Auswahl von Strümpfen (z. B. Farben/Muster) – Umgang mit und Pflege von Strümpfen und Binden (z. B. Waschen, Trocknen) – Umgang mit Anund Ausziehhilfen – Sonstiges",NA,NA,FALSE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+399,09-01-03,edukation,Abzufragende Kriterien der Patientenedukation beim Ulcus cruris arteriosum,FALSE,FALSE,"Ulcus cruris arteriosum, Informationen und Aufklärung zu: – Ursache/n der Wunde – Behandlungsmaßnahmen (u. a. Gefäßtraining/strukturierter Gefäßsport, Operation, Blutdruckoptimierung) – Risikofaktoren (z. B. Rauchen, Diabetes, Adipositas, BMI > 30) – Rauch(er)entwöhnung und Gewichtsreduktion – Medikamentenumgang – Schmerzkontrolle – Hautpflege und -beobachtung (rosig/blass) und Hauttemperatur (warm/kalt) – Lagerung der Beine – Auswahl/Anpassung von Bekleidung/Schuhen (z. B. keine einschnürenden Bündchen, Miederhosen) – Ausgewogene Ernährung – Sonstiges",NA,NA,FALSE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+400,09-02,edukation,Adhärenz,FALSE,TRUE,-,NA,"Wichtig zu erheben, jedoch steht Validierung noch aus",FALSE,0,nicht eindeutig,0,NA,NA,NA,NA,NA
+401,10,allgemein,Lateralität,"NA","NA",Lateralität,NA,NA,"NA",1,key_item,1,NA,NA,NA,NA,NA
+402,10,allgemein,Lateralität,"NA","NA",links,NA,NA,"NA",1,value_item,1,NA,NA,NA,NA,NA
+403,10,allgmein,Lateralität,"NA","NA",rechts,NA,NA,"NA",1,value_item,1,NA,NA,NA,NA,NA
