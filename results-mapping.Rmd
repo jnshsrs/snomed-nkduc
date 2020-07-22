@@ -9,54 +9,34 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE, echo=TRUE, message=FALSE, warning=FALSE}
 
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, include = TRUE, message=FALSE, warning=FALSE)
 
 library(tidyverse) # for data manipulation
 library(googlesheets4) # Read raw data stored in a google sheet document
 library(vcd) # Calculation reliability statistics, e.g. Kappa
 library(gt) # This packages supports the creation of tables
 
-sheet <- "1-Iyg6n1gbFOH7FiRYUybo7Vw1lyW2_Hesf1WKf_hazg" # sheet identifier (google sheets)
-
+fct_label_inorder <- c("Equivalence of meaning; lexical, as well as conceptual",
+                       "Equivalence of meaning, but with synonymy.",
+                       "Source concept is broader and has a less specific meaning than the target concept",
+                       "Source concept is narrower and has a more specific meaning than the target concept",
+                       "No map is possible")
 
 # Data preprocessing
 # Among other tasks: relabels factors
-concepts <- googlesheets4::read_sheet(ss = sheet, sheet = "finalisieren", col_types = "c") %>% 
+concepts <- read_csv(file = "./data/mapping-results.csv", col_types = cols(.default = "c")) %>% 
   mutate(kapitel = stringr::str_extract(string = chapter, pattern = "^\\d{2}")) %>% 
   mutate_at("kapitelbezeichnung", stringr::str_to_title) %>% 
   mutate(kapitelnummer = str_extract(string = chapter, pattern = "^\\d\\d")) %>% 
   mutate(kapitelbezeichnung = glue::glue("{kapitelnummer} {kapitelbezeichnung}")) %>% 
   select(-kapitelnummer) %>% 
-  mutate_at(c("equ_jens", "equ_mareike", "equi_final"), 
-            .f = ~ factor(x = .x, 
-                          levels = 1:5, 
-                          labels = c("Equivalence of meaning; lexical, as well as conceptual",
-                                     "Equivalence of meaning, but with synonymy.",
-                                     "Source concept is broader and has a less specific meaning than the target concept",
-                                     "Source concept is narrower and has a more specific meaning than the target concept",
-                                     "No map is possible"),
-                          ordered = TRUE))
-
-1 # This one is necessary to correctly load the sheet from google drive/ sheets
-
-ref_table <- googlesheets4::read_sheet(ss = sheet, sheet = "referenz-tabelle") %>% 
-  mutate(kapitel = stringr::str_extract(string = chapter, pattern = "^\\d{2}"))
+  mutate_at(.vars = c("equ_jens", "equ_mareike", "equi_final"), 
+            .funs = ~ factor(x = .x, levels = fct_label_inorder, labels = fct_label_inorder, ordered = TRUE))
 
 ```
 
-Wie viele Konzepte werden verknüpft?
-
-```{r}
-
-ref_table %>%
-  filter(mapping == "1") %>%
-  group_by(kapitelbezeichnung, kapitel) %>% 
-  count() %>% 
-  arrange(kapitel)
-  
-```
 
 # Reliabilität Mapping
 
@@ -364,19 +344,3 @@ coverage_by_chapter %>%
   gt::tab_spanner(label = "SNOMED CT identified", columns = c("No", "Yes"))
 
 ```
-
-```{r}
-# Finale Map-Table
-cross_map <- concepts %>% 
-  filter(finales_konzept == 1) %>% 
-  select(id, snomed_code, descriptor, equi_final) %>% 
-  distinct()
-
-# googlesheets4::write_sheet(data = cross_map, ss = sheet, sheet = "cross-map")
-
-# write_csv(x = cross_map, path = "./data/cross-map.csv")
-# write_csv(x = concepts, path = "./data/mapping-results.csv")
-# write_csv(x = ref_table, path = "./data/reference-table-nkduc.csv")
-
-```
-
