@@ -18,3 +18,13 @@ The coverage rate and reliability analysis is available in a python notebook.
 - [Coverage Rate and Reliability Analysis](https://jnshsrs.github.io/snomed-nkduc/snomed.html).
 
 **Note:** Additionally, we provide the same analysis as in R which can be found [here](https://jnshsrs.github.io/snomed-nkduc/results-mapping.html).
+
+## Information Model
+
+For the translation from the NKDUC items to SNOMED CT, we identified the NKDUC items that were to be mapped by constructing an information model from the NKDUC, that was initialy published in an tabular structure by its authors.
+
+You can find an aggregated visualisation of our model in the diagram below.
+
+![Aggregated Class Diagram](./img/class-diagram-aggregated.png)
+
+An detailled version is also available [here](./img/class-diagram-aggregated.png).
