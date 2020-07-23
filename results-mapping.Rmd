@@ -3,7 +3,6 @@ title: "SNOMED Mapping"
 author: "Jens Hüsers"
 date: "5/25/2020"
 output:
-  html
   md_document:
     variant: markdown_github
 editor_options: 
@@ -13,6 +12,7 @@ editor_options:
 ```{r setup, include=TRUE, echo=TRUE, message=FALSE, warning=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE, include = TRUE, message=FALSE, warning=FALSE)
+
 ```
 
 ```{r import}
@@ -30,14 +30,12 @@ fct_label_inorder <- c("Equivalence of meaning; lexical, as well as conceptual",
 
 # Data preprocessing
 # Among other tasks: relabels factors
-concepts <- read_csv(file = "./data/mapping-results.csv", col_types = cols(.default = "c")) %>% 
-  mutate(kapitel = stringr::str_extract(string = chapter, pattern = "^\\d{2}")) %>% 
-  mutate_at("kapitelbezeichnung", stringr::str_to_title) %>% 
-  mutate(kapitelnummer = str_extract(string = chapter, pattern = "^\\d\\d")) %>% 
-  mutate(kapitelbezeichnung = glue::glue("{kapitelnummer} {kapitelbezeichnung}")) %>% 
-  select(-kapitelnummer) %>% 
+# concepts <- read_csv(file = "./data/mapping-results.csv", col_types = cols(.default = "c")) %>% 
+concepts <- read_csv(file = "~/Downloads/überarbeitet-snomed-mapping - Tabellenblatt1 (2).csv", col_types = cols(.default = "c")) %>% 
   mutate_at(.vars = c("equ_jens", "equ_mareike", "equi_final"), 
             .funs = ~ factor(x = .x, levels = fct_label_inorder, labels = fct_label_inorder, ordered = TRUE))
+
+
 
 ```
 
@@ -125,35 +123,31 @@ mapping_results %>%
 
 ```{r equivalence_rating}
 
-equ <- concepts %>% 
-  select(id, kapitelbezeichnung, kapitel, equ_jens, equ_mareike) %>%
-  mutate_at("kapitelbezeichnung", stringr::str_to_title) %>% 
-  mutate(Chapter = glue::glue("{kapitel} - {kapitelbezeichnung}", .na =  NULL)) %>% 
-  select(-kapitelbezeichnung, -kapitel)
+overall_equ <- irr::kappam.fleiss(concepts[, c("equ_jens", "equ_mareike")])
 
-overall_equ <- irr::kappam.fleiss(equ[, c("equ_jens", "equ_mareike")])
-
-by_chapter_equ <- equ %>% 
+by_chapter_equ <- concepts %>% 
+  select(id, kapitelbezeichnung, equ_jens, equ_mareike) %>% 
   nest(data = c(id, equ_jens, equ_mareike)) %>% 
   mutate(kappa = map(data, ~ irr::kappam.fleiss(ratings = .x[, c("equ_jens", "equ_mareike")]))) %>% 
   mutate(kappa_val = map_dbl(kappa, pluck, "value")) %>% 
   mutate(kappa_subjects = map_dbl(kappa, pluck, "subjects")) %>% 
   unnest(data) %>% 
   mutate(agreement = equ_jens == equ_mareike) %>% 
-  group_by(Chapter) %>% 
+  group_by(kapitelbezeichnung) %>% 
   mutate(agreement = sum(agreement) / length(agreement)) %>% 
   summarise_at(c("kappa_val", "kappa_subjects", "agreement"), .funs = mean) %>% 
   mutate(Group = "By Chapter")
 
 overall_equ <- tibble(
   Chapter = "",
-  agreement = sum(equ$equ_jens == equ$equ_mareike) / nrow(equ),
+  agreement = sum(concepts$equ_jens == concepts$equ_mareike) / nrow(concepts),
   kappa_val = overall_equ$value,
   kappa_subjects = overall_equ$subjects,
   Group = "Overall"
 )
 
 by_chapter_equ %>% 
+  rename(Chapter = kapitelbezeichnung) %>% 
   mutate_at("Chapter", as.character) %>% 
   bind_rows(overall_equ) %>% 
   select(Chapter, Percent = agreement, `Fleiss-Kappa` = kappa_val, `Number of Items` = kappa_subjects, Group) %>% 
@@ -179,7 +173,7 @@ by_chapter_equ %>%
 
 coverage_results <- concepts %>% 
   group_by(id) %>% 
-  filter(finales_konzept == min(finales_konzept)) %>% 
+  filter(!is.na(finales_konzept)) %>% 
   distinct(id, .keep_all = TRUE) %>% 
   group_by(equi_final) %>% 
   count() %>% 
@@ -206,12 +200,13 @@ coverage_results %>%
 
 ```
 
+In this study, three mappers researched SNOMED CT for 268 NKDUC items. Among them, 117 concepts had a direct match in SNOMED CT, 63 concepts had a match but which was classified as a match through synonymy. For 48 NKDUK items, a corresponding concept in the target terminology was missing. For the remainding 39 NKDUC items, the matach was asymmetrical, i.e., the meannig of the source concept was broader or narrower that its corresponding target concept.
+
 
 ```{r}
 
 results_equivalence <- concepts %>% 
-  group_by(id) %>% 
-  filter(finales_konzept == min(finales_konzept)) %>% 
+  filter(!is.na(finales_konzept)) %>% 
   distinct(id, .keep_all = TRUE) %>% 
   group_by(equi_final, kapitelbezeichnung) %>% 
   count() %>% 
