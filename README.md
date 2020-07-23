@@ -27,4 +27,4 @@ You can find an aggregated visualisation of our model in the diagram below.
 
 ![Aggregated Class Diagram](./img/class-diagram-aggregated.png)
 
-An detailled version is also available [here](./img/class-diagram-aggregated.png).
+An detailled version is also available [here](./img/class-diagram.png).

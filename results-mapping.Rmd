@@ -3,6 +3,7 @@ title: "SNOMED Mapping"
 author: "Jens Hüsers"
 date: "5/25/2020"
 output:
+  html
   md_document:
     variant: markdown_github
 editor_options: 
@@ -12,6 +13,9 @@ editor_options:
 ```{r setup, include=TRUE, echo=TRUE, message=FALSE, warning=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE, include = TRUE, message=FALSE, warning=FALSE)
+```
+
+```{r import}
 
 library(tidyverse) # for data manipulation
 library(googlesheets4) # Read raw data stored in a google sheet document
